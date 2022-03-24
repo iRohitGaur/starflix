@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="127" viewBox="0 0 400 127">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 500px;
+        font-family: Phosphate-Inline, Phosphate;
+      }
+
+      .cls-2 {
+        font-size: 308.333px;
+        font-family: Gulim;
+      }
+    </style>
+  </defs>
+  <text id="STARFLIX" class="cls-1" transform="translate(-0.864 72.047) scale(0.211 0.211)">STARFLIX</text>
+  <text id="BIRD_VIDEOS" data-name="BIRD VIDEOS" class="cls-2" transform="translate(-5.943 125.749) scale(0.211 0.211)">BIRD VIDEOS</text>
+</svg>
