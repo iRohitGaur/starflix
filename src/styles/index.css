@@ -1,0 +1,55 @@
+@import url("https://starlingui.netlify.app/sui.css");
+html[sui-mode="dark"] {
+  --PRIMARY: var(--PRIMARY-LIGHT2);
+}
+
+body {
+  background: var(--BG);
+  color: var(--TEXT);
+}
+
+.stf_red {
+  background: red;
+}
+
+.stf_red_icon {
+  color: red;
+}
+
+.stf_green {
+  background: green;
+}
+
+.stf_green_icon {
+  color: green;
+}
+
+.stf_yellow {
+  background: #ed9f3a;
+}
+
+.stf_yellow_icon {
+  color: #ed9f3a;
+}
+
+.stf_orange {
+  background: #f45b19;
+}
+
+.stf_orange_icon {
+  color: #f45b19;
+}
+
+.stf_primary {
+  background: var(--PRIMARY-DARK2);
+}
+
+.stf_primary_icon {
+  color: var(--PRIMARY-DARK2);
+}
+
+.sui_card:hover {
+  -webkit-box-shadow: 0 0 4px 0 var(--TEXT);
+          box-shadow: 0 0 4px 0 var(--TEXT);
+}
+/*# sourceMappingURL=index.css.map */
