@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,kBAAkB,CAAC;EACjB,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,SAAS;CACnB",
+    "sources": [
+        "likedvideos.scss"
+    ],
+    "names": [],
+    "file": "likedvideos.css"
+}

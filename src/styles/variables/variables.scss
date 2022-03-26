@@ -22,10 +22,23 @@ $warning: var(--VARIANT-3);
 $warninglight1: var(--VARIANT-3-LIGHT1);
 $warninglight2: var(--VARIANT-3-LIGHT2);
 
+$bgdark2: var(--GRAY-DARK);
+$bgdark1: var(--GRAY);
 $bg: var(--BG);
 $text: var(--TEXT);
+$shade: var(--SHADE);
+
+$caption: #c67000;
 $red: red;
 $green: green;
-$gray: gray;
+$gray: #ababab;
 $yellow: #ed9f3a;
 $orange: #f45b19;
+
+@mixin flex($gap, $direction: null, $align: null, $justify: null) {
+  display: flex;
+  gap: $gap;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}

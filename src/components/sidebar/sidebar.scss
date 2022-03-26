@@ -1,0 +1,48 @@
+@import "../../styles/variables/variables.scss";
+
+aside {
+  grid-area: sidebar;
+  background: $bgdark1;
+  width: max-content;
+  padding-top: 1rem;
+  position: sticky;
+  top: 5rem;
+
+  button.sui_btn {
+    border-radius: 0;
+    border: none;
+  }
+  button.sui_btn:hover {
+    border-radius: 0;
+    border: none;
+  }
+
+  .btn_txt {
+    text-decoration: none;
+  }
+}
+.sidebar_item_wrapper {
+  @include flex(20px, null, center);
+  padding: 10px 26px;
+
+  svg {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .sidebar_item_wrapper {
+    p {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .sidebar_item_wrapper {
+    padding: 10px 15px;
+  }
+}

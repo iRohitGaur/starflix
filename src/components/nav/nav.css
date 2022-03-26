@@ -1,0 +1,17 @@
+nav {
+  grid-area: nav;
+  background: var(--GRAY);
+  -webkit-box-shadow: 0 0 1px var(--TEXT);
+          box-shadow: 0 0 1px var(--TEXT);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+/*# sourceMappingURL=nav.css.map */

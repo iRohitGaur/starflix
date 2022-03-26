@@ -1,0 +1,12 @@
+@import "../../../styles/variables/variables.scss";
+
+.stf_cta {
+  @include flex(1rem, null, center);
+  padding-right: 2rem;
+}
+.stf_cta button {
+  font-size: 3rem;
+}
+.btn_icon_fa {
+  padding: 0;
+}

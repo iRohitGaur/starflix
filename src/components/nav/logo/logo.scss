@@ -1,0 +1,22 @@
+@import "../../../styles/variables/variables.scss";
+
+.stf_logo_wrapper {
+  @include flex(null, null, center);
+  height: 100%;
+}
+.stf_logo {
+  height: 100%;
+  padding: 5px 1rem;
+}
+.stf_logo_text_wrapper {
+  line-height: 1;
+  @include flex(null, column);
+}
+.stf_logo_text {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.stf_logo_caption {
+  font-size: 1.8rem;
+  color: $caption;
+}
