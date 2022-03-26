@@ -14,13 +14,14 @@ export const videos = [
     views: "17M",
     category: "birdsound",
     bird: "nightingale",
+    featured: true,
     channelName: "Wildlife World",
     channelThumbnail:
       "https://yt3.ggpht.com/4ZVdcB6kl7cC02-Z-_685X7R9eFdNnXjhaABDYGWEecyHMnMzEHHqoAgownw476VPYLv6F2fvg=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCqrg-CrSVAjTYCy4f6LBD4g",
     subscribers: "292K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "rkSOPq18TL8",
@@ -32,13 +33,14 @@ export const videos = [
     views: "2896",
     category: "birdsound",
     bird: "owl",
+    featured: false,
     channelName: "Wildlife World",
     channelThumbnail:
       "https://yt3.ggpht.com/4ZVdcB6kl7cC02-Z-_685X7R9eFdNnXjhaABDYGWEecyHMnMzEHHqoAgownw476VPYLv6F2fvg=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCqrg-CrSVAjTYCy4f6LBD4g",
     subscribers: "292K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "o4HBQuVWuQk",
@@ -50,13 +52,14 @@ export const videos = [
     views: "5979",
     category: "birdsound",
     bird: "thrush",
+    featured: false,
     channelName: "Wildlife World",
     channelThumbnail:
       "https://yt3.ggpht.com/4ZVdcB6kl7cC02-Z-_685X7R9eFdNnXjhaABDYGWEecyHMnMzEHHqoAgownw476VPYLv6F2fvg=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCqrg-CrSVAjTYCy4f6LBD4g",
     subscribers: "292K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "RrN1PA2JDoM",
@@ -69,13 +72,14 @@ export const videos = [
     views: "6483",
     category: "birdsound",
     bird: "robin",
+    featured: false,
     channelName: "Wildlife World",
     channelThumbnail:
       "https://yt3.ggpht.com/4ZVdcB6kl7cC02-Z-_685X7R9eFdNnXjhaABDYGWEecyHMnMzEHHqoAgownw476VPYLv6F2fvg=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCqrg-CrSVAjTYCy4f6LBD4g",
     subscribers: "292K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "y0xZ_3gEoEM",
@@ -87,13 +91,14 @@ export const videos = [
     views: "809K",
     category: "birdsound",
     bird: "lovebird",
+    featured: false,
     channelName: "Video Kameraku",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQlM-fY9gda1DjRvQjwyU219Y9eMbQsMohxT3M=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UC6bNB5RdBO2tUTHBlq7a0vw",
     subscribers: "42.2K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "YLn9SD3sXFU",
@@ -105,13 +110,14 @@ export const videos = [
     views: "4127",
     category: "birdsound",
     bird: "budgie",
+    featured: false,
     channelName: "Budgie Nation",
     channelThumbnail:
       "https://yt3.ggpht.com/btoXFstbAvUqugZcxe-nXEFPiSl2nQ6IQWAEC2ewS8Eed8oyjDLpWWU7aB-WlO7SGxk9qYUKSQ=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UC5-JvmBeujLWY4s3ejCaK3w",
     subscribers: "23.4K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "VwCcAh7FinU",
@@ -123,13 +129,14 @@ export const videos = [
     views: "4.6M",
     category: "documentary",
     bird: "eagle",
+    featured: true,
     channelName: "Free Documentary - Nature",
     channelThumbnail:
       "https://yt3.ggpht.com/x0upGkXC1ecRLxFsT-Y__EcP5A3AzUHO_gwP_hWV2yppb6G8CNE6MWvWXmqnLOKhEkit7GbhNQ=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCQtW2oz8ec8pHjjxawujNjg",
     subscribers: "982K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "1_8hz4bHfYY",
@@ -142,13 +149,14 @@ export const videos = [
     views: "1.1M",
     category: "documentary",
     bird: "falcon",
+    featured: false,
     channelName: "Wonders of the World",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQgr4Prlcp9-qDVudkkpalvTrAEpy7gV7GNA_dpVA=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UC1dWsFevTpXh1fLMpLTtoAg",
     subscribers: "919K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "3ieppWouPxk",
@@ -160,13 +168,14 @@ export const videos = [
     views: "307K",
     category: "documentary",
     bird: "macaw",
+    featured: true,
     channelName: "Wildlife Messengers",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLT3M35jkS0fNG3VbZCsjqpFZ2VgExURPQJcd99Q=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCqnxsc8aB1Sjfc8rfAPY8Dg",
     subscribers: "4.86K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "RKpD80VlZao",
@@ -178,13 +187,14 @@ export const videos = [
     views: "21K",
     category: "documentary",
     bird: "honeyeater",
+    featured: false,
     channelName: "Wildlife Messengers",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLT3M35jkS0fNG3VbZCsjqpFZ2VgExURPQJcd99Q=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCqnxsc8aB1Sjfc8rfAPY8Dg",
     subscribers: "4.86K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "uJ7AfPrfqB0",
@@ -197,13 +207,14 @@ export const videos = [
     views: "2.8M",
     category: "documentary",
     bird: "penguin",
+    featured: false,
     channelName: "Free Documentary - Nature",
     channelThumbnail:
       "https://yt3.ggpht.com/x0upGkXC1ecRLxFsT-Y__EcP5A3AzUHO_gwP_hWV2yppb6G8CNE6MWvWXmqnLOKhEkit7GbhNQ=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCQtW2oz8ec8pHjjxawujNjg",
     subscribers: "982K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "0e2TpkZ1FEY",
@@ -216,13 +227,14 @@ export const videos = [
     views: "556K",
     category: "documentary",
     bird: "owl",
+    featured: false,
     channelName: "Free Documentary - Nature",
     channelThumbnail:
       "https://yt3.ggpht.com/x0upGkXC1ecRLxFsT-Y__EcP5A3AzUHO_gwP_hWV2yppb6G8CNE6MWvWXmqnLOKhEkit7GbhNQ=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCQtW2oz8ec8pHjjxawujNjg",
     subscribers: "982K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "W_4H8Ynpv3I",
@@ -234,13 +246,14 @@ export const videos = [
     views: "16.9K",
     category: "birdfact",
     bird: "starling",
+    featured: true,
     channelName: "A Shot Of Wildlife",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQ2Ep34nxfT1syRc7euHG--7NTtZBRFSkBPrVdP=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCZ4FD_GqvrpAWVlyjLFaMyQ",
     subscribers: "7.16K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "Dbwp2MFbvOE",
@@ -252,13 +265,14 @@ export const videos = [
     views: "328",
     category: "birdfact",
     bird: "woodpecker",
+    featured: false,
     channelName: "A Shot Of Wildlife",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQ2Ep34nxfT1syRc7euHG--7NTtZBRFSkBPrVdP=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCZ4FD_GqvrpAWVlyjLFaMyQ",
     subscribers: "7.16K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "cw-IGYyae6c",
@@ -270,13 +284,14 @@ export const videos = [
     views: "7487",
     category: "birdfact",
     bird: "buzzard",
+    featured: true,
     channelName: "A Shot Of Wildlife",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQ2Ep34nxfT1syRc7euHG--7NTtZBRFSkBPrVdP=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCZ4FD_GqvrpAWVlyjLFaMyQ",
     subscribers: "7.16K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "42dM5PJRdeE",
@@ -288,13 +303,14 @@ export const videos = [
     views: "24.2K",
     category: "birdfact",
     bird: "robin",
+    featured: false,
     channelName: "A Shot Of Wildlife",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQ2Ep34nxfT1syRc7euHG--7NTtZBRFSkBPrVdP=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCZ4FD_GqvrpAWVlyjLFaMyQ",
     subscribers: "7.16K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "62P470JcDN4",
@@ -306,13 +322,14 @@ export const videos = [
     views: "5964",
     category: "birdfact",
     bird: "cormorant",
+    featured: false,
     channelName: "A Shot Of Wildlife",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQ2Ep34nxfT1syRc7euHG--7NTtZBRFSkBPrVdP=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCZ4FD_GqvrpAWVlyjLFaMyQ",
     subscribers: "7.16K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     _id: "9B5l8l_IZCg",
@@ -324,12 +341,13 @@ export const videos = [
     views: "54.2K",
     category: "birdfact",
     bird: "magpie",
+    featured: false,
     channelName: "A Shot Of Wildlife",
     channelThumbnail:
       "https://yt3.ggpht.com/ytc/AKedOLQ2Ep34nxfT1syRc7euHG--7NTtZBRFSkBPrVdP=s176-c-k-c0x00ffffff-no-rj",
     channelLink: "https://www.youtube.com/channel/UCZ4FD_GqvrpAWVlyjLFaMyQ",
     subscribers: "7.16K",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odio iusto porro quasi quidem. Repudiandae odit at fuga.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
 ];

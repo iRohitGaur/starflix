@@ -1,12 +1,38 @@
 @import url("https://starlingui.netlify.app/sui.css");
 @import "./variables/variables.scss";
 
+html[sui-mode="light"] {
+  --GRAY: #d2d2d2;
+}
+
 html[sui-mode="dark"] {
   --PRIMARY: var(--PRIMARY-LIGHT2);
+  --GRAY: #111111;
 }
 body {
   background: $bg;
   color: $text;
+  font-size: 1.6rem;
+}
+#root {
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "sidebar main";
+  grid-template-columns: 200px auto;
+  grid-template-rows: 5rem auto;
+  height: 100vh;
+  width: 100vw;
+}
+@media only screen and (max-width: 600px) {
+  #root {
+    grid-template-columns: 75px auto;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #root {
+    grid-template-columns: 55px auto;
+  }
 }
 .stf_red {
   background: $red;
@@ -33,10 +59,10 @@ body {
   color: $orange;
 }
 .stf_primary {
-  background: $primaryd2;
+  background: $primarydark2;
 }
 .stf_primary_icon {
-  color: $primaryd2;
+  color: $primarydark2;
 }
 .sui_card:hover {
   box-shadow: 0 0 4px 0 $text;

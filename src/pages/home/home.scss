@@ -1,0 +1,38 @@
+@import "../../styles/variables/variables.scss";
+
+.home_page {
+  grid-area: main;
+  padding: 1rem 20px;
+  @include flex(2rem, column);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.stf_section {
+  @include flex(1rem, column, center);
+  width: 100%;
+}
+.stf_category_wrapper {
+  @include flex(2rem, null, center, space-around);
+  flex-wrap: wrap;
+  width: 100%;
+
+  .stf_category_img_wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  p {
+    position: absolute;
+    top: 0;
+    font-size: 1.6rem;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    background: $shade;
+    opacity: 0.8;
+  }
+}
+.stf_video_wrapper {
+  @include flex(2rem, null, null, space-around);
+  flex-wrap: wrap;
+}

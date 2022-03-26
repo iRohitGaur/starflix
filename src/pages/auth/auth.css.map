@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,SAAS;CACnB",
+    "sources": [
+        "auth.scss"
+    ],
+    "names": [],
+    "file": "auth.css"
+}

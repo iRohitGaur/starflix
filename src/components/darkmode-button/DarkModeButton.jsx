@@ -25,7 +25,11 @@ function DarkModeButton() {
   };
 
   return (
-    <button className="btn_icon_fa" onClick={toggleTheme}>
+    <button
+      title={theme === "light" ? "dark mode" : "light mode"}
+      className="btn_icon_fa"
+      onClick={toggleTheme}
+    >
       {theme === "light" && <NotoV1Owl />}
       {theme === "dark" && <NotoChicken />}
     </button>

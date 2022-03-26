@@ -1,0 +1,139 @@
+@import "../../styles/variables/variables.scss";
+
+.sui_card {
+  button {
+    z-index: 1;
+  }
+  .card_video_length {
+    z-index: 1;
+  }
+}
+
+.card_img_wrapper {
+  .sui_btn_float {
+    background: $shade;
+    box-shadow: 0 0 1px $text;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    padding: 4px 5px;
+    top: 10px;
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+  .stf_float_bottom_right {
+    bottom: 10px;
+    right: 5px;
+    top: revert;
+  }
+  .card_video_length {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font-size: 1.2rem;
+    background: $shade;
+    padding: 2px 5px;
+    box-shadow: 0 0 1px $text;
+    border-radius: 4px;
+    opacity: 0.9;
+  }
+}
+.card_content_wrapper {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 40px auto;
+  gap: 10px;
+  overflow: hidden;
+
+  .card_subscribers {
+    @include flex(null, column);
+    line-height: 1.1;
+  }
+
+  .card_content_channel_wrapper {
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 40px;
+    @include flex(5px, column, center, space-between);
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+  .card_content_title_wrapper {
+    @include flex(5px, column);
+    line-height: 1.2;
+
+    .card_video_title {
+      font-size: 1.4rem;
+      height: 35px;
+      overflow: hidden;
+    }
+    .view_likes_wrapper {
+      @include flex(1rem, null, center);
+      line-height: 1;
+      padding-bottom: 6px;
+
+      p {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+    }
+    a {
+      line-height: 1;
+      text-decoration: none;
+      color: $primary;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.card_horizontal {
+  display: grid;
+  grid-template-columns: 25rem auto;
+  width: 100%;
+  img {
+    width: 25rem;
+  }
+  .card_content_wrapper {
+    @include flex(null, column, null, space-between);
+    padding: 10px;
+    max-height: 187px;
+    .card_video_title {
+      font-size: 1.8rem;
+      height: revert;
+    }
+    .card_video_description {
+      font-size: 1.4rem;
+      flex-shrink: 1;
+      overflow: hidden;
+    }
+  }
+  .card_content_channel_wrapper {
+    @include flex(10px, row, center);
+    width: fit-content;
+    a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .card_horizontal {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    .card_img_wrapper {
+      max-height: 30rem;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

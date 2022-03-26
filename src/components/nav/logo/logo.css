@@ -1,0 +1,36 @@
+.stf_logo_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.stf_logo {
+  height: 100%;
+  padding: 5px 1rem;
+}
+
+.stf_logo_text_wrapper {
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.stf_logo_text {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stf_logo_caption {
+  font-size: 1.8rem;
+  color: #c67000;
+}
+/*# sourceMappingURL=logo.css.map */
