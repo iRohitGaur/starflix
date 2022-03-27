@@ -1,4 +1,33 @@
+@import "../../styles/variables/variables.scss";
+
 .explore_page {
   grid-area: main;
   padding: 1rem 20px;
+  overflow-y: auto;
+  @include flex(2rem, column);
+
+  .filter_chip_wrapper {
+    @include flex(5px, null, center, null);
+    flex-wrap: wrap;
+    padding-top: 2rem;
+
+    .filter_chip {
+      border: 2px solid $primary;
+      width: fit-content;
+      padding: 5px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .filter_chip:hover {
+      border: 2px solid $primarylight1;
+    }
+  }
+  .filter_chip_selected {
+    background: $primary;
+    color: $white;
+  }
+  .filter_videos_wrapper {
+    @include flex(2rem, null, center);
+    flex-wrap: wrap;
+  }
 }

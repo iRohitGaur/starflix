@@ -1,23 +1,23 @@
 aside {
   grid-area: sidebar;
-  background: var(--GRAY);
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  padding-top: 1rem;
+  padding-top: 2rem;
   position: -webkit-sticky;
   position: sticky;
   top: 5rem;
 }
 
 aside button.sui_btn {
-  border-radius: 0;
+  border-radius: 0 999px 999px 0;
   border: none;
 }
 
 aside button.sui_btn:hover {
-  border-radius: 0;
+  border-radius: 0 999px 999px 0;
   border: none;
+  opacity: 0.9;
 }
 
 aside .btn_txt {

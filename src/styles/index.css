@@ -20,8 +20,8 @@ body {
       grid-template-areas: "nav nav" "sidebar main";
   -ms-grid-columns: 200px auto;
       grid-template-columns: 200px auto;
-  -ms-grid-rows: 5rem auto;
-      grid-template-rows: 5rem auto;
+  -ms-grid-rows: 6rem auto;
+      grid-template-rows: 6rem auto;
   height: 100vh;
   width: 100vw;
 }

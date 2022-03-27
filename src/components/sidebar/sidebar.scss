@@ -2,19 +2,20 @@
 
 aside {
   grid-area: sidebar;
-  background: $bgdark1;
+  // background: $bgdark1;
   width: max-content;
-  padding-top: 1rem;
+  padding-top: 2rem;
   position: sticky;
   top: 5rem;
 
   button.sui_btn {
-    border-radius: 0;
+    border-radius: 0 999px 999px 0;
     border: none;
   }
   button.sui_btn:hover {
-    border-radius: 0;
+    border-radius: 0 999px 999px 0;
     border: none;
+    opacity: 0.9;
   }
 
   .btn_txt {
