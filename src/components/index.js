@@ -3,3 +3,7 @@ export { default as Nav } from "./nav/Nav";
 export { default as Sidebar } from "./sidebar/Sidebar";
 export { default as Card } from "./card/Card";
 export { default as CardHorizontal } from "./card/CardHorizontal";
+export { default as Input } from "./input/Input";
+export { default as Loader } from "./loader/Loader";
+export { default as PrivateRoute } from "./private-route/PrivateRoute";
+export { default as RestrictedRoute } from "./restricted-route/RestrictedRoute";

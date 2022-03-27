@@ -1,4 +1,127 @@
+@import "../../styles/variables/variables.scss";
+
 .auth_page {
   grid-area: main;
   padding: 1rem 20px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+.login_signup_wrapper {
+  background: $shade;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  max-width: 35rem;
+  max-height: 40rem;
+  overflow-y: hidden;
+  flex-grow: 1;
+  border-radius: 8px;
+  align-items: center;
+  padding: 2rem;
+  margin: auto;
+  transition: all 0.5s ease;
+}
+.moved_up {
+  max-height: 45rem;
+  transition: all 0.5s ease;
+}
+.login_wrapper,
+.signup_wrapper {
+  width: 100%;
+  align-items: center;
+  margin: auto;
+  transition: transform ease 0.3s;
+}
+.box_title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.signup_wrapper .box_title {
+  padding-top: 4.5rem;
+}
+.ep_wrapper {
+  gap: 2.5rem;
+  width: 85%;
+}
+.ep_wrapper input {
+  border: 1px solid $text;
+}
+.ep_check_wrapper {
+  gap: 1.5rem;
+  width: 85%;
+  margin-top: 1rem;
+  justify-content: space-between;
+
+  input {
+    accent-color: $primarylight2;
+  }
+}
+.stc_signup .ep_check_wrapper {
+  margin-top: 2rem;
+}
+.ep_check_wrapper input[type="checkbox"] {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0;
+}
+.login_checkbox_text {
+  font-size: 1.4rem;
+}
+.input_lbl,
+.input_info {
+  background: $shade;
+  transition: all 0.5s ease;
+}
+.login_fyp {
+  align-self: flex-end;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.authpage .sui_btn {
+  width: 85%;
+  font-size: 2rem;
+}
+.ep_mt2 {
+  margin: 2rem 0 0 0;
+}
+.ep_cna {
+  margin-top: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+.ep_cna span {
+  text-decoration: none;
+}
+.move_up {
+  transform: translateY(-41rem);
+}
+svg.rotate_tee {
+  transform: rotateX(180deg);
+}
+button {
+  cursor: pointer;
+}
+.sui_btn_disabled {
+  pointer-events: none;
+  background: $bgdark2;
+  border: 2px solid $bgdark2;
+}
+.sui_input {
+  padding: 5px 10px 2px;
+}
+.input_desc {
+  width: 95%;
+}
+.login_signup_wrapper .btn_txt {
+  color: $primary;
+}
+.btn_txt svg {
+  color: $primary;
+}
+.btn_txt:hover,
+.btn_txt:hover svg {
+  color: $primarylight1;
 }

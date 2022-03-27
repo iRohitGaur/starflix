@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Nav, Sidebar } from "components";
+import { Nav, PrivateRoute, RestrictedRoute, Sidebar } from "components";
 import {
   Auth,
   Explore,
@@ -19,11 +19,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/playlist" element={<Playlist />} />
-        <Route path="/likedvideos" element={<LikedVideos />} />
-        <Route path="/watchlater" element={<WatchLater />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/auth" element={<Auth />} />
+
+        <Route element={<PrivateRoute />}>
+          <Route path="/playlist" element={<Playlist />} />
+          <Route path="/likedvideos" element={<LikedVideos />} />
+          <Route path="/watchlater" element={<WatchLater />} />
+          <Route path="/history" element={<History />} />
+        </Route>
+
+        <Route element={<RestrictedRoute />}>
+          <Route path="/auth" element={<Auth />} />
+        </Route>
       </Routes>
     </>
   );
