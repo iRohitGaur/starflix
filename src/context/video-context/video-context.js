@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { useAxios } from "utils";
+import filterData from "./filterData";
 
 const VideoContext = createContext();
 
@@ -10,8 +11,7 @@ function VideoProvider({ children }) {
 
   const initialState = {
     videoData: [],
-    category: [],
-    bird: [],
+    filters: [],
   };
 
   const [state, dispatch] = useReducer((state, action) => {
@@ -24,19 +24,28 @@ function VideoProvider({ children }) {
       case "FILTER":
         return {
           ...state,
-          [action.filterType]: state[action.filterType].includes(action.filter)
-            ? state[action.filterType].filter((type) => type !== action.filter)
-            : [...state[action.filterType], action.filter],
+          filters: state.filters.includes(action.payload)
+            ? state.filters.filter((f) => f !== action.payload)
+            : action.payload.includes("under")
+            ? state.filters.findIndex((f) => f.includes("under")) === -1
+              ? [...state.filters, action.payload]
+              : state.filters.map((f) =>
+                  f.includes("under") ? action.payload : f
+                )
+            : [...state.filters, action.payload],
         };
       case "RESET_FILTERS":
         return {
           ...initialState,
-          videoData: state.videoData,
+          videoData: [...state.videoData],
         };
       default:
         throw new Error(`Unhandled type: ${action.type}`);
     }
   }, initialState);
+
+  const filteredVideos = filterData(state);
+
   const featuredVideos = state.videoData.filter((p) => p.featured);
 
   useEffect(() => {
@@ -58,7 +67,7 @@ function VideoProvider({ children }) {
   }, [dispatch, response]);
 
   return (
-    <VideoContext.Provider value={{ featuredVideos, state, dispatch, loading }}>
+    <VideoContext.Provider value={{ filteredVideos, featuredVideos, state, dispatch, loading }}>
       {children}
     </VideoContext.Provider>
   );

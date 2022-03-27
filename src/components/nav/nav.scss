@@ -2,10 +2,9 @@
 
 nav {
   grid-area: nav;
-  background: $bgdark1;
-  box-shadow: 0 0 1px $text;
   @include flex(null, null, null, space-between);
   z-index: 1;
+  padding-top: 10px;
   position: sticky;
   top: 0;
 }
