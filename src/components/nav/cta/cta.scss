@@ -4,9 +4,48 @@
   @include flex(1rem, null, center);
   padding-right: 2rem;
 }
-.stf_cta button {
-  font-size: 3rem;
+.stf_cta {
+  button,
+  a {
+    @include flex(null, null, center);
+    font-size: 3rem;
+  }
 }
 .btn_icon_fa {
   padding: 0;
+}
+.av_sm {
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.stf_user_area {
+  position: relative;
+}
+.stf_user_area:hover .stf_user_hover_area {
+  display: flex;
+}
+.stf_user_hover_area {
+  position: absolute;
+  top: 4rem;
+  text-align: end;
+  background: $success;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+}
+.stf_user_hover_area .stf_user_profile,
+.stf_user_hover_area .stf_logout_btn {
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  color: var(--PRIMARY);
 }
