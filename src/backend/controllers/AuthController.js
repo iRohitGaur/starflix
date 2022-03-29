@@ -3,7 +3,7 @@ import { Response } from "miragejs";
 import { formatDate } from "../utils/authUtils";
 import jwt_decode from "jwt-decode";
 const sign = require("jwt-encode");
-// const decode = require("jwt-decode");
+
 /**
  * All the routes related to Auth are present here.
  * These are Publicly accessible routes.
