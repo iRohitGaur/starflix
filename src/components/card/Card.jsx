@@ -1,9 +1,10 @@
 import {
+  AntDesignLikeOutlined,
   CarbonTime,
   IcRoundPlaylistAdd,
   IcRoundPlaylistRemove,
 } from "assets/Icons";
-import { useAuth, usePlaylist } from "context";
+import { useAuth, useLikedVideos, usePlaylist, useWatchLater } from "context";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./card.css";
@@ -32,6 +33,12 @@ function Card({ video, playlistId }) {
     removeVideoFromPlaylist,
   } = usePlaylist();
 
+  const { watchLater, addVideoToWatchLater, removeVideoFromWatchLater } =
+    useWatchLater();
+
+  const { likedVideos, addVideoToLikes, removeVideoFromLikes } =
+    useLikedVideos();
+
   const handleAddToPlaylist = () => {
     if (user) {
       if (playlistId) {
@@ -49,22 +56,52 @@ function Card({ video, playlistId }) {
     }
   };
 
+  const isInWatchLater =
+    watchLater.findIndex((v) => v._id === video._id) !== -1;
+
+  const handleWatchLater = () => {
+    isInWatchLater
+      ? removeVideoFromWatchLater(video._id)
+      : addVideoToWatchLater(video);
+  };
+
+  const isInLikedVideos =
+    likedVideos.findIndex((v) => v._id === video._id) !== -1;
+
+  const handleLikedVideos = () => {
+    isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
+  };
+
   return (
     <div className="sui_card">
       <div className="card_img_wrapper">
-        <button
-          title="watch later"
-          className="sui_btn_float float_top_right stc_red_icon"
-        >
-          <CarbonTime />
-        </button>
-        <button
-          title={`${playlistId ? "remove from playlist" : "add to playlist"}`}
-          className="sui_btn_float stf_float_bottom_right stc_red_icon"
-          onClick={handleAddToPlaylist}
-        >
-          {playlistId ? <IcRoundPlaylistRemove /> : <IcRoundPlaylistAdd />}
-        </button>
+        <div className="card_btn_wrapper">
+          <button
+            title="add to watch later"
+            className={`sui_btn stf_card_btn float_top_right ${
+              isInLikedVideos && "in_watchlater_liked"
+            }`}
+            onClick={handleLikedVideos}
+          >
+            <AntDesignLikeOutlined />
+          </button>
+          <button
+            title="add to watch later"
+            className={`sui_btn stf_card_btn float_top_right ${
+              isInWatchLater && "in_watchlater_liked"
+            }`}
+            onClick={handleWatchLater}
+          >
+            <CarbonTime />
+          </button>
+          <button
+            title={`${playlistId ? "remove from playlist" : "add to playlist"}`}
+            className="sui_btn stf_card_btn stf_float_bottom_right"
+            onClick={handleAddToPlaylist}
+          >
+            {playlistId ? <IcRoundPlaylistRemove /> : <IcRoundPlaylistAdd />}
+          </button>
+        </div>
         <div className="card_video_length">{videoLength}</div>
         <img src={videoThumbnail} alt={title} />
       </div>

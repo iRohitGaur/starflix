@@ -37,6 +37,9 @@ $gray: #ababab;
 $yellow: #ed9f3a;
 $orange: #f45b19;
 
+$btnbg: var(--BTNBG);
+$btnbghover: var(--BTNBGHOVER);
+
 @mixin flex($gap, $direction: null, $align: null, $justify: null) {
   display: flex;
   gap: $gap;

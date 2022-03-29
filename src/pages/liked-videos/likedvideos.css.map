@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,kBAAkB,CAAC;EACjB,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,SAAS;CACnB",
+    "mappings": "AAEA,AAAA,kBAAkB,CAAC;EACjB,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,SAAS;CACnB;;AACD,AAAA,mBAAmB,CAAC;ECqClB,OAAO,EAAE,IAAI;EACb,GAAG,EDrCW,IAAI;ECuClB,WAAW,EDvCe,MAAM;EAChC,SAAS,EAAE,IAAI;CAChB",
     "sources": [
-        "likedvideos.scss"
+        "likedvideos.scss",
+        "../../styles/variables/variables.scss"
     ],
     "names": [],
     "file": "likedvideos.css"

@@ -3,11 +3,15 @@
 
 html[sui-mode="light"] {
   --GRAY: #d2d2d2;
+  --BTNBG: #ffffffaa;
+  --BTNBGHOVER: #ffffff;
 }
 
 html[sui-mode="dark"] {
   --PRIMARY: var(--PRIMARY-LIGHT2);
   --GRAY: #111111;
+  --BTNBG: #0d0d0daa;
+  --BTNBGHOVER: #0d0d0d;
 }
 body {
   background: $bg;
