@@ -6,7 +6,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 
 function Auth() {
-  useDocumentTitle("StarCart - Authentication - Rohit Gaur");
+  useDocumentTitle("Starflix - Authentication - Rohit Gaur");
   const [moveUp, setMoveUp] = useState(false);
   const { pathname } = useLocation();
 

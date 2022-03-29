@@ -7,3 +7,5 @@ export { default as Input } from "./input/Input";
 export { default as Loader } from "./loader/Loader";
 export { default as PrivateRoute } from "./private-route/PrivateRoute";
 export { default as RestrictedRoute } from "./restricted-route/RestrictedRoute";
+export { default as CreateNewPlaylist } from "./create-new-playlist/CreateNewPlaylist";
+export { default as AddVideoToPlaylist } from "./add-video-to-playlist/AddVideoToPlaylist";

@@ -1,9 +1,14 @@
-import { CarbonTime, IcRoundPlaylistAdd } from "assets/Icons";
+import {
+  CarbonTime,
+  IcRoundPlaylistAdd,
+  IcRoundPlaylistRemove,
+} from "assets/Icons";
+import { useAuth, usePlaylist } from "context";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./card.css";
 
-function Card({ video }) {
+function Card({ video, playlistId }) {
   const {
     title,
     videoLength,
@@ -16,6 +21,34 @@ function Card({ video }) {
     subscribers,
   } = video;
 
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const {
+    playlists,
+    setCreateNewPlaylistModal,
+    setShowPlaylistsModal,
+    setVideoToAddToPlaylist,
+    removeVideoFromPlaylist,
+  } = usePlaylist();
+
+  const handleAddToPlaylist = () => {
+    if (user) {
+      if (playlistId) {
+        removeVideoFromPlaylist(playlistId, video._id);
+      } else {
+        setVideoToAddToPlaylist(video);
+        if (playlists.length === 0) {
+          setCreateNewPlaylistModal(true);
+        } else {
+          setShowPlaylistsModal(true);
+        }
+      }
+    } else {
+      navigate("/auth");
+    }
+  };
+
   return (
     <div className="sui_card">
       <div className="card_img_wrapper">
@@ -26,10 +59,11 @@ function Card({ video }) {
           <CarbonTime />
         </button>
         <button
-          title="add to playlist"
+          title={`${playlistId ? "remove from playlist" : "add to playlist"}`}
           className="sui_btn_float stf_float_bottom_right stc_red_icon"
+          onClick={handleAddToPlaylist}
         >
-          <IcRoundPlaylistAdd />
+          {playlistId ? <IcRoundPlaylistRemove /> : <IcRoundPlaylistAdd />}
         </button>
         <div className="card_video_length">{videoLength}</div>
         <img src={videoThumbnail} alt={title} />

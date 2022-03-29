@@ -1,7 +1,8 @@
 import React from "react";
 import { CarbonTime, IcRoundPlaylistAdd } from "assets/Icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./card.css";
+import { useAuth, usePlaylist } from "context";
 
 function CardHorizontal({ video }) {
   const {
@@ -17,6 +18,20 @@ function CardHorizontal({ video }) {
     description,
   } = video;
 
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const { playlists, setCreateNewPlaylistModal, toggleShowPlaylistsModal } =
+    usePlaylist();
+
+  const handleAddToPlaylist = () => {
+    user
+      ? playlists.length === 0
+        ? setCreateNewPlaylistModal(true)
+        : toggleShowPlaylistsModal(true)
+      : navigate("/auth");
+  };
+
   return (
     <div className="sui_card card_horizontal">
       <div className="card_img_wrapper">
@@ -29,6 +44,7 @@ function CardHorizontal({ video }) {
         <button
           title="add to playlist"
           className="sui_btn_float stf_float_bottom_right stc_red_icon"
+          onClick={handleAddToPlaylist}
         >
           <IcRoundPlaylistAdd />
         </button>

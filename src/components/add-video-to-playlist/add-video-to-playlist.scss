@@ -1,0 +1,22 @@
+@import "../../styles/variables/variables.scss";
+
+.add_video_to_playlist {
+  @include flex(2rem, column, center, center);
+
+  .add_btn_playlist_wrapper {
+    @include flex(1rem, column, center, center);
+    width: 100%;
+
+    .add_btn_playlist {
+      background: $shade;
+      color: $text;
+    }
+  }
+}
+.create_new_playlist {
+  @include flex(1rem, row, center, center);
+  svg {
+    height: 2rem;
+    width: 2rem;
+  }
+}

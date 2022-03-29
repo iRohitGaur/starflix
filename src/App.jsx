@@ -1,5 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import { Nav, PrivateRoute, RestrictedRoute, Sidebar } from "components";
+import {
+  AddVideoToPlaylist,
+  CreateNewPlaylist,
+  Nav,
+  PrivateRoute,
+  RestrictedRoute,
+  Sidebar,
+} from "components";
 import {
   Auth,
   Explore,
@@ -31,6 +38,9 @@ function App() {
           <Route path="/auth" element={<Auth />} />
         </Route>
       </Routes>
+
+      <CreateNewPlaylist />
+      <AddVideoToPlaylist />
     </>
   );
 }

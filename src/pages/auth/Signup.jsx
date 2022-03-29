@@ -34,7 +34,6 @@ function Signup({ moveUp, setMoveUp }) {
 
   useEffect(() => {
     if (response !== undefined && response.createdUser !== null) {
-      console.log(response);
       localStorage.setItem("starflix-user-token", response.encodedToken);
       setUserAndToken(response.createdUser, response.encodedToken);
     }

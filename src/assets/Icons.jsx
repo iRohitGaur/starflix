@@ -484,3 +484,43 @@ export function IcRoundPlaylistAdd(props) {
     </svg>
   );
 }
+export function IcRoundPlaylistRemove(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M13.71 21.3c.39.39 1.02.39 1.41 0L17 19.41l1.89 1.89a.996.996 0 1 0 1.41-1.41L18.41 18l1.89-1.89a.996.996 0 1 0-1.41-1.41L17 16.59l-1.89-1.89a.996.996 0 1 0-1.41 1.41L15.59 18l-1.89 1.89c-.38.38-.38 1.02.01 1.41zM14 11c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1h9c.55 0 1-.45 1-1zm0-4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1h9c.55 0 1-.45 1-1zM3 15c0 .55.45 1 1 1h5c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"
+      ></path>
+    </svg>
+  );
+}
+export function IcOutlineClose(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"
+      ></path>
+    </svg>
+  );
+}
+export function MdiTextBoxRemoveOutline(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="m14.46 15.88l1.42-1.42L18 16.59l2.12-2.13l1.42 1.42L19.41 18l2.13 2.12l-1.42 1.42L18 19.41l-2.12 2.13l-1.42-1.42L16.59 18l-2.13-2.12M5 3h14c1.11 0 2 .89 2 2v7.8c-.61-.35-1.28-.6-2-.72V5H5v14h7.08c.12.72.37 1.39.72 2H5c-1.11 0-2-.89-2-2V5c0-1.11.89-2 2-2m2 4h10v2H7V7m0 4h10v1.08c-.85.14-1.63.46-2.32.92H7v-2m0 4h5v2H7v-2Z"
+      ></path>
+    </svg>
+  );
+}
+export function MdiTextBoxCheckOutline(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="m17 21l-2.75-3l1.16-1.16L17 18.43l3.59-3.59l1.16 1.41M12.8 21H5c-1.11 0-2-.89-2-2V5c0-1.11.89-2 2-2h14c1.11 0 2 .89 2 2v7.8c-.61-.35-1.28-.6-2-.72V5H5v14h7.08c.12.72.37 1.39.72 2m-.8-4H7v-2h5m2.68-2H7v-2h10v1.08c-.85.14-1.63.46-2.32.92M17 9H7V7h10"
+      ></path>
+    </svg>
+  );
+}
