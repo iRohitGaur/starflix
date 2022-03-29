@@ -1,8 +1,9 @@
 import { v4 as uuid } from "uuid";
 import { Response } from "miragejs";
 import { formatDate } from "../utils/authUtils";
+import jwt_decode from "jwt-decode";
 const sign = require("jwt-encode");
-const decode = require("jwt-decode");
+// const decode = require("jwt-decode");
 /**
  * All the routes related to Auth are present here.
  * These are Publicly accessible routes.
@@ -107,7 +108,10 @@ export const loginHandler = function (schema, request) {
 
 export const verifyUser = function (schema, request) {
   const { encodedToken } = JSON.parse(request.requestBody);
-  const decodedToken = decode(encodedToken, process.env.REACT_APP_JWT_SECRET);
+  const decodedToken = jwt_decode(
+    encodedToken,
+    process.env.REACT_APP_JWT_SECRET
+  );
   try {
     if (decodedToken) {
       const foundUser = this.db.users.findBy({ email: decodedToken.email });
