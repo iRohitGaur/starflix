@@ -1,4 +1,81 @@
+@import "../../styles/variables/variables.scss";
+
 .playlist_page {
   grid-area: main;
-  padding: 1rem 20px;
+  padding: 3rem 20px;
+  @include flex(2rem, null, flex-start, flex-start);
+
+  .btn_playlist {
+    background: $bg;
+    border: 2px solid $primarylight1;
+    color: $text;
+  }
+  .selected_btn {
+    background: $successdark1;
+    border: 2px solid $successdark2;
+    color: $black;
+  }
+
+  .create_new_playlist {
+    @include flex(10px, null, center);
+
+    svg {
+      height: 2.2rem;
+      width: 2.2rem;
+    }
+  }
+
+  .playlist_wrapper {
+    @include flex(1rem, column, center, center);
+    width: 223px;
+    min-width: 223px;
+  }
+  .playlist_content_wrapper {
+    width: 100%;
+
+    .playlist_video_listing {
+      @include flex(1rem, null, center, flex-start);
+      flex-wrap: wrap;
+    }
+  }
+  .playlist_video_listing_wrapper {
+    @include flex(1rem, column, flex-start, center);
+
+    .playlist_video_listing_title_wrapper {
+      width: 100%;
+      @include flex(1rem, null, center, space-between);
+
+      .playlist_video_listing_title {
+        font-size: 2rem;
+      }
+
+      .remove_playlist {
+        width: fit-content;
+        background: $dangerdark2;
+        border: 2px solid $dangerdark2;
+        @include flex(1rem, null, center);
+
+        svg {
+          height: 2.2rem;
+          width: 2.2rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 750px) {
+  .playlist_page {
+    grid-area: main;
+    padding: 3rem 20px;
+    @include flex(2rem, column, center, center);
+
+    .playlist_video_listing_wrapper {
+      @include flex(1rem, column, center, center);
+    }
+
+    .playlist_video_listing {
+      @include flex(2rem, column, center, center);
+      flex-wrap: wrap;
+    }
+  }
 }

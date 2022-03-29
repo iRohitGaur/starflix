@@ -13,7 +13,7 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     (async () => {
-      const localToken = localStorage.getItem("starcart-user-token");
+      const localToken = localStorage.getItem("starflix-user-token");
       if (localToken) {
         setToken(localToken);
         operation({
