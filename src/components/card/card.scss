@@ -10,17 +10,42 @@
 }
 
 .card_img_wrapper {
-  .sui_btn_float {
-    background: $shade;
-    box-shadow: 0 0 1px $text;
-    border-radius: 4px;
-    display: grid;
-    place-items: center;
-    padding: 4px 5px;
-    top: 10px;
-    svg {
-      height: 2rem;
-      width: 2rem;
+  .card_btn_wrapper {
+    position: absolute;
+    bottom: 1rem;
+    right: 5px;
+    @include flex(1rem, null, center, center);
+
+    .stf_card_btn {
+      height: fit-content;
+      width: fit-content;
+      @include flex(null, null, center, center);
+      padding: 3px;
+      background: $btnbg;
+      border: none;
+      color: $primary;
+      box-shadow: 0 0 1px $text;
+      border-radius: 50%;
+
+      svg {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+    .stf_card_btn:hover {
+      background: $btnbghover;
+      transition: all 0.5s ease;
+    }
+    .in_watchlater_liked {
+      background: $successdark2;
+      svg {
+        color: $white;
+      }
+    }
+    .in_watchlater_liked:hover {
+      svg {
+        color: $text;
+      }
     }
   }
   .stf_float_bottom_right {

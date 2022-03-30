@@ -1,4 +1,10 @@
+@import "../../styles/variables/variables.scss";
+
 .liked_videos_page {
   grid-area: main;
   padding: 1rem 20px;
+}
+.likevideos_wrapper {
+  @include flex(2rem, null, center);
+  flex-wrap: wrap;
 }

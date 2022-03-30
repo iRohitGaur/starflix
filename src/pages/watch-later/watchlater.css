@@ -2,4 +2,16 @@
   grid-area: main;
   padding: 1rem 20px;
 }
+
+.watch_later_page .watchlater_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 /*# sourceMappingURL=watchlater.css.map */

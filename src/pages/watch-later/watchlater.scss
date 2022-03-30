@@ -1,4 +1,11 @@
+@import "../../styles/variables/variables.scss";
+
 .watch_later_page {
   grid-area: main;
   padding: 1rem 20px;
+
+  .watchlater_wrapper {
+    @include flex(2rem, null, center);
+    flex-wrap: wrap;
+  }
 }
