@@ -1,20 +1,13 @@
 @import "../../styles/variables/variables.scss";
 
-.sui_card {
-  button {
-    z-index: 1;
-  }
-  .card_video_length {
-    z-index: 1;
-  }
-}
-
 .card_img_wrapper {
+  cursor: pointer;
   .card_btn_wrapper {
     position: absolute;
     bottom: 1rem;
     right: 5px;
     @include flex(1rem, null, center, center);
+    z-index: 1;
 
     .stf_card_btn {
       height: fit-content;
@@ -43,6 +36,7 @@
       }
     }
     .in_watchlater_liked:hover {
+      background: $successdark2;
       svg {
         color: $text;
       }

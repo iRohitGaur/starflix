@@ -1,9 +1,5 @@
-.sui_card button {
-  z-index: 1;
-}
-
-.sui_card .card_video_length {
-  z-index: 1;
+.card_img_wrapper {
+  cursor: pointer;
 }
 
 .card_img_wrapper .card_btn_wrapper {
@@ -20,6 +16,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 1;
 }
 
 .card_img_wrapper .card_btn_wrapper .stf_card_btn {
@@ -64,6 +61,10 @@
 
 .card_img_wrapper .card_btn_wrapper .in_watchlater_liked svg {
   color: var(--WHITE);
+}
+
+.card_img_wrapper .card_btn_wrapper .in_watchlater_liked:hover {
+  background: var(--VARIANT-2-DARK2);
 }
 
 .card_img_wrapper .card_btn_wrapper .in_watchlater_liked:hover svg {

@@ -39,7 +39,14 @@ function Card({ video, playlistId }) {
   const { likedVideos, addVideoToLikes, removeVideoFromLikes } =
     useLikedVideos();
 
-  const handleAddToPlaylist = () => {
+  const isInWatchLater =
+    watchLater.findIndex((v) => v._id === video._id) !== -1;
+
+  const isInLikedVideos =
+    likedVideos.findIndex((v) => v._id === video._id) !== -1;
+
+  const handleAddToPlaylist = (e) => {
+    e.stopPropagation();
     if (user) {
       if (playlistId) {
         removeVideoFromPlaylist(playlistId, video._id);
@@ -56,25 +63,23 @@ function Card({ video, playlistId }) {
     }
   };
 
-  const isInWatchLater =
-    watchLater.findIndex((v) => v._id === video._id) !== -1;
-
-  const handleWatchLater = () => {
+  const handleWatchLater = (e) => {
+    e.stopPropagation();
     isInWatchLater
       ? removeVideoFromWatchLater(video._id)
       : addVideoToWatchLater(video);
   };
 
-  const isInLikedVideos =
-    likedVideos.findIndex((v) => v._id === video._id) !== -1;
-
-  const handleLikedVideos = () => {
+  const handleLikedVideos = (e) => {
+    e.stopPropagation();
     isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
   };
 
+  const handleVideoSelection = () => {};
+
   return (
     <div className="sui_card">
-      <div className="card_img_wrapper">
+      <div className="card_img_wrapper" onClick={handleVideoSelection}>
         <div className="card_btn_wrapper">
           <button
             title="add to watch later"
