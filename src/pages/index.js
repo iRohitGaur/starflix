@@ -5,3 +5,5 @@ export { default as Home } from "./home/Home";
 export { default as LikedVideos } from "./liked-videos/LikedVideos";
 export { default as Playlist } from "./playlist/Playlist";
 export { default as WatchLater } from "./watch-later/WatchLater";
+export { default as Video } from "./video/Video";
+export { default as Page404 } from "./404/Page404";

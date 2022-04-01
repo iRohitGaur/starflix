@@ -1,0 +1,195 @@
+@import "../../styles/variables/variables.scss";
+
+.video_page {
+  grid-area: main;
+  padding: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include flex(2rem);
+
+  .stf_video_player_wrapper {
+    @include flex(2rem, column);
+    width: 100%;
+  }
+  .stf_video_player {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 80vw;
+    height: 70vh;
+    min-height: 70vh;
+    flex-grow: 1;
+  }
+
+  .stf_below_video_section {
+    @include flex(2rem);
+  }
+  .stf_video_description_section {
+    @include flex(2rem, column);
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .stf_video_channel_wrapper {
+    @include flex(1rem, row, center);
+
+    .stf_channel_title_wrapper {
+      a {
+        text-decoration: none;
+        color: $primary;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+      }
+      .card_video_subscribers {
+        @include flex(1rem, null, center);
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+  .stf_title_cta_section {
+    @include flex(1rem, null, center);
+
+    .stf_video_page_title_desc {
+      @include flex(1rem, column);
+      height: 100%;
+    }
+    .stf_video_page_video_title {
+      font-size: 2.8rem;
+      font-weight: 600;
+    }
+    .stf_video_page_video_desc {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: $textgray;
+      text-align: justify;
+    }
+    .stf_page_video_cta {
+      color: $textgray;
+      height: 100%;
+      width: 30%;
+      min-width: 310px;
+      padding: 2rem;
+      padding-top: 0;
+      @include flex(2rem, column);
+
+      .stf_page_video_cta_details {
+        @include flex(2rem, column);
+      }
+
+      p {
+        @include flex(1rem, null, center);
+        font-size: 1.6rem;
+
+        svg {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+      }
+
+      .video_page_add_to_likes_btn {
+        color: $primarylight2;
+        cursor: pointer;
+      }
+      .video_page_is_in_liked_videos {
+        color: $successdark2;
+      }
+    }
+
+    .btn_watch_later_playlist {
+      @include flex(1rem, null, center);
+      flex-wrap: wrap;
+
+      .video_page_watch_later_btn,
+      .video_page_add_to_playlist_btn {
+        border-radius: 4px;
+        background: $primarylight2;
+        border: 2px solid $primarylight2;
+        color: $white;
+        padding: 1rem;
+      }
+      button:hover {
+        transform: translateY(-1px);
+      }
+      .video_page_add_to_playlist_btn {
+        background: $warningdark2;
+        border: 2px solid $warningdark2;
+      }
+      .video_page_is_in_watch_later {
+        background: $successdark2;
+        border: 2px solid $successdark2;
+      }
+    }
+  }
+
+  .stf_related_videos_wrapper {
+    @include flex(1rem, column, center);
+    height: fit-content;
+    background: $shade;
+    border-radius: 12px;
+    padding: 2rem;
+    padding-top: 5px;
+  }
+  .stf_related_videos {
+    @include flex(1rem, column, center);
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .video_page {
+    @include flex(2rem, column);
+
+    .stf_related_videos_wrapper {
+      padding-top: 2rem;
+    }
+    .stf_related_videos {
+      @include flex(2rem, row);
+      flex-wrap: wrap;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .video_page {
+    .stf_title_cta_section {
+      @include flex(1rem, column-reverse, flex-start, flex-start);
+      width: 80vw;
+
+      .stf_page_video_cta {
+        max-width: 50vw;
+        padding: 2rem 0;
+
+        .stf_page_video_cta_details {
+          @include flex(2rem, row);
+          flex-wrap: wrap;
+          width: 80vw;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .video_page {
+    padding: 2rem 0;
+    padding-right: 1rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  :root {
+    font-size: 8px;
+  }
+  .stf_related_videos_wrapper {
+    padding: 1rem;
+  }
+  .stf_related_videos {
+    @include flex(2rem, row, center, center);
+  }
+  .btn_watch_later_playlist {
+    flex-wrap: wrap;
+  }
+}

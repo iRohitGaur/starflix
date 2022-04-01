@@ -14,7 +14,7 @@ function VideoProvider({ children }) {
     filters: [],
   };
 
-  const [state, dispatch] = useReducer((state, action) => {
+  const [videoState, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case "SETVALUE":
         return {
@@ -44,9 +44,9 @@ function VideoProvider({ children }) {
     }
   }, initialState);
 
-  const filteredVideos = filterData(state);
+  const filteredVideos = filterData(videoState);
 
-  const featuredVideos = state.videoData.filter((p) => p.featured);
+  const featuredVideos = videoState.videoData.filter((p) => p.featured);
 
   useEffect(() => {
     operation({
@@ -67,7 +67,7 @@ function VideoProvider({ children }) {
   }, [dispatch, response]);
 
   return (
-    <VideoContext.Provider value={{ filteredVideos, featuredVideos, state, dispatch, loading }}>
+    <VideoContext.Provider value={{ filteredVideos, featuredVideos, videoState, dispatch, loading }}>
       {children}
     </VideoContext.Provider>
   );
