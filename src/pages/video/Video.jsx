@@ -5,7 +5,7 @@ import {
   useVideo,
   useWatchLater,
 } from "context";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ReactPlayer from "react-player/lazy";
 import "./video.css";
@@ -48,7 +48,7 @@ function Video() {
 
   const { width: windowWidth } = useWindowDimensions();
 
-  const videos = videoState.videoData
+  const relatedVideos = videoState.videoData
     .filter((v) => v.category === video.category && v._id !== video._id)
     .slice(0, 4);
 
@@ -64,8 +64,18 @@ function Video() {
     subscribers,
   } = video;
 
+  useEffect(() => {
+    document.title = `Starflix - ${title} - Rohit Gaur`;
+  }, [title]);
+
   const { user } = useAuth();
   const navigate = useNavigate();
+
+  const mainSection = useRef();
+
+  useEffect(() => {
+    mainSection.current.scrollTo(0, 0);
+  }, [video]);
 
   const {
     playlists,
@@ -117,7 +127,7 @@ function Video() {
   };
 
   return (
-    <div className="video_page">
+    <div className="video_page" ref={mainSection}>
       <div className="stf_video_player_wrapper">
         <div className="stf_video_player">
           <ReactPlayer
@@ -197,8 +207,8 @@ function Video() {
         Related Videos
         <div className="stf_related_videos">
           {windowWidth <= 1300 && windowWidth > 500
-            ? videos.map((v) => <CardHorizontal key={v._id} video={v} />)
-            : videos.map((v) => <Card key={v._id} video={v} />)}
+            ? relatedVideos.map((v) => <CardHorizontal key={v._id} video={v} />)
+            : relatedVideos.map((v) => <Card key={v._id} video={v} />)}
         </div>
       </div>
     </div>
