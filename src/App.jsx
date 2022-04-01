@@ -13,7 +13,9 @@ import {
   History,
   Home,
   LikedVideos,
+  Page404,
   Playlist,
+  Video,
   WatchLater,
 } from "pages";
 
@@ -26,6 +28,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/video/:videoId" element={<Video />} />
+        <Route path="*" element={<Page404 />} />
 
         <Route element={<PrivateRoute />}>
           <Route path="/playlist" element={<Playlist />} />

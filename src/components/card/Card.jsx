@@ -75,7 +75,9 @@ function Card({ video, playlistId }) {
     isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
   };
 
-  const handleVideoSelection = () => {};
+  const handleVideoSelection = () => {
+    navigate(`/video/${video._id}`);
+  };
 
   return (
     <div className="sui_card">

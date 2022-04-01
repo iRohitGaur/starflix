@@ -534,3 +534,83 @@ export function MdiTextBoxCheckOutline(props) {
     </svg>
   );
 }
+export function IcRoundPlayArrow(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z"
+      ></path>
+    </svg>
+  );
+}
+export function IcRoundPause(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M8 19c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2zm6-12v10c0 1.1.9 2 2 2s2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2z"
+      ></path>
+    </svg>
+  );
+}
+export function IcRoundStop(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M8 6h8c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2z"
+      ></path>
+    </svg>
+  );
+}
+export function IcRoundVolumeUp(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M3 10v4c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71V6.41c0-.89-1.08-1.34-1.71-.71L7 9H4c-.55 0-1 .45-1 1zm13.5 2A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 4.45v.2c0 .38.25.71.6.85C17.18 6.53 19 9.06 19 12s-1.82 5.47-4.4 6.5c-.36.14-.6.47-.6.85v.2c0 .63.63 1.07 1.21.85C18.6 19.11 21 15.84 21 12s-2.4-7.11-5.79-8.4c-.58-.23-1.21.22-1.21.85z"
+      ></path>
+    </svg>
+  );
+}
+export function IcRoundVolumeDown(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M18.5 12A4.5 4.5 0 0 0 16 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 10v4c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71V6.41c0-.89-1.08-1.34-1.71-.71L9 9H6c-.55 0-1 .45-1 1z"
+      ></path>
+    </svg>
+  );
+}
+export function IcRoundVolumeOff(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M3.63 3.63a.996.996 0 0 0 0 1.41L7.29 8.7L7 9H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71v-4.17l4.18 4.18c-.49.37-1.02.68-1.6.91c-.36.15-.58.53-.58.92c0 .72.73 1.18 1.39.91c.8-.33 1.55-.77 2.22-1.31l1.34 1.34a.996.996 0 1 0 1.41-1.41L5.05 3.63c-.39-.39-1.02-.39-1.42 0zM19 12c0 .82-.15 1.61-.41 2.34l1.53 1.53c.56-1.17.88-2.48.88-3.87c0-3.83-2.4-7.11-5.78-8.4c-.59-.23-1.22.23-1.22.86v.19c0 .38.25.71.61.85C17.18 6.54 19 9.06 19 12zm-8.71-6.29l-.17.17L12 7.76V6.41c0-.89-1.08-1.33-1.71-.7zM16.5 12A4.5 4.5 0 0 0 14 7.97v1.79l2.48 2.48c.01-.08.02-.16.02-.24z"
+      ></path>
+    </svg>
+  );
+}
+export function IcOutlineRemoveRedEye(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M12 6.5a9.77 9.77 0 0 1 8.82 5.5c-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12A9.77 9.77 0 0 1 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5a2.5 2.5 0 0 1 0 5a2.5 2.5 0 0 1 0-5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5s4.5-2.02 4.5-4.5s-2.02-4.5-4.5-4.5z"
+      ></path>
+    </svg>
+  );
+}
+export function IcSharpTimer(props) {
+  return (
+    <svg width="1rem" height="1rem" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 0 0 7.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7z"
+      ></path>
+    </svg>
+  );
+}

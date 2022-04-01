@@ -30,14 +30,14 @@ body {
   width: 100vw;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   #root {
     -ms-grid-columns: 75px auto;
         grid-template-columns: 75px auto;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   #root {
     -ms-grid-columns: 55px auto;
         grid-template-columns: 55px auto;

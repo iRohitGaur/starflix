@@ -1,0 +1,8 @@
+.page404 {
+  grid-area: main;
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  place-items: center;
+}
+/*# sourceMappingURL=page404.css.map */

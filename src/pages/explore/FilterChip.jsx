@@ -2,16 +2,16 @@ import { useVideo } from "context";
 import React from "react";
 
 function FilterChip({ text }) {
-  const { state, dispatch } = useVideo();
+  const { videoState, videoDispatch } = useVideo();
 
   const isSelected =
-    state.filters.length === 0 && text === "all"
+    videoState.filters.length === 0 && text === "all"
       ? true
-      : state.filters.includes(text);
+      : videoState.filters.includes(text);
 
   const handleFilter = () => {
-    text === "all" && dispatch({ type: "RESET_FILTERS" });
-    text !== "all" && dispatch({ type: "FILTER", payload: text });
+    text === "all" && videoDispatch({ type: "RESET_FILTERS" });
+    text !== "all" && videoDispatch({ type: "FILTER", payload: text });
   };
 
   return (
