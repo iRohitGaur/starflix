@@ -14,4 +14,19 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+.likevideos_wrapper .stf_like_videos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.likevideos_wrapper .stf_like_videos p {
+  font-size: 1.8rem;
+}
 /*# sourceMappingURL=likedvideos.css.map */

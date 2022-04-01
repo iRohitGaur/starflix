@@ -9,9 +9,14 @@ function LikedVideos() {
   return (
     <main className="liked_videos_page">
       <div className="likevideos_wrapper">
-        {likedVideos.map((video) => (
-          <Card key={video._id} video={video} />
-        ))}
+        {likedVideos.length === 0 ? (
+          <div className="stf_like_videos">
+            <p>Nothing to show here.</p>
+            <p>When you like a video it will be added to your Liked Videos.</p>
+          </div>
+        ) : (
+          likedVideos.map((video) => <Card key={video._id} video={video} />)
+        )}
       </div>
     </main>
   );

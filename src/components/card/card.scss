@@ -2,6 +2,23 @@
 
 .card_img_wrapper {
   cursor: pointer;
+
+  .stf_remove_from_history_btn {
+    top: 1rem;
+    height: fit-content;
+    width: fit-content;
+    @include flex(null, null, center, center);
+    padding: 3px;
+    background: $btnbg;
+    border: none;
+    border-radius: 50%;
+
+    svg {
+      color: $dangerdark2;
+      height: 3rem;
+      width: 3rem;
+    }
+  }
   .card_btn_wrapper {
     position: absolute;
     bottom: 1rem;

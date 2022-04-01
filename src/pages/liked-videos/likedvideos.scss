@@ -7,4 +7,12 @@
 .likevideos_wrapper {
   @include flex(2rem, null, center);
   flex-wrap: wrap;
+
+  .stf_like_videos {
+    @include flex(2rem, column);
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
 }
