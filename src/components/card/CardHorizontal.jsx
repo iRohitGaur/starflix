@@ -1,12 +1,18 @@
+import {
+  AntDesignLikeOutlined,
+  CarbonTime,
+  IcRoundPlaylistAdd,
+  IcRoundPlaylistRemove,
+} from "assets/Icons";
+import { useAuth, useLikedVideos, usePlaylist, useWatchLater } from "context";
 import React from "react";
-import { CarbonTime, IcRoundPlaylistAdd } from "assets/Icons";
 import { Link, useNavigate } from "react-router-dom";
 import "./card.css";
-import { useAuth, usePlaylist } from "context";
 
-function CardHorizontal({ video }) {
+function CardHorizontal({ video, playlistId }) {
   const {
     title,
+    description,
     videoLength,
     videoThumbnail,
     likes,
@@ -15,39 +21,95 @@ function CardHorizontal({ video }) {
     channelThumbnail,
     channelLink,
     subscribers,
-    description,
   } = video;
 
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  const { playlists, setCreateNewPlaylistModal, toggleShowPlaylistsModal } =
-    usePlaylist();
+  const {
+    playlists,
+    setCreateNewPlaylistModal,
+    setShowPlaylistsModal,
+    setVideoToAddToPlaylist,
+    removeVideoFromPlaylist,
+  } = usePlaylist();
 
-  const handleAddToPlaylist = () => {
-    user
-      ? playlists.length === 0
-        ? setCreateNewPlaylistModal(true)
-        : toggleShowPlaylistsModal(true)
-      : navigate("/auth");
+  const { watchLater, addVideoToWatchLater, removeVideoFromWatchLater } =
+    useWatchLater();
+
+  const { likedVideos, addVideoToLikes, removeVideoFromLikes } =
+    useLikedVideos();
+
+  const isInWatchLater =
+    watchLater.findIndex((v) => v._id === video._id) !== -1;
+
+  const isInLikedVideos =
+    likedVideos.findIndex((v) => v._id === video._id) !== -1;
+
+  const handleAddToPlaylist = (e) => {
+    e.stopPropagation();
+    if (user) {
+      if (playlistId) {
+        removeVideoFromPlaylist(playlistId, video._id);
+      } else {
+        setVideoToAddToPlaylist(video);
+        if (playlists.length === 0) {
+          setCreateNewPlaylistModal(true);
+        } else {
+          setShowPlaylistsModal(true);
+        }
+      }
+    } else {
+      navigate("/auth");
+    }
+  };
+
+  const handleWatchLater = (e) => {
+    e.stopPropagation();
+    isInWatchLater
+      ? removeVideoFromWatchLater(video._id)
+      : addVideoToWatchLater(video);
+  };
+
+  const handleLikedVideos = (e) => {
+    e.stopPropagation();
+    isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
+  };
+
+  const handleVideoSelection = () => {
+    navigate(`/video/${video._id}`);
   };
 
   return (
     <div className="sui_card card_horizontal">
-      <div className="card_img_wrapper">
-        <button
-          title="watch later"
-          className="sui_btn_float float_top_right stc_red_icon"
-        >
-          <CarbonTime />
-        </button>
-        <button
-          title="add to playlist"
-          className="sui_btn_float stf_float_bottom_right stc_red_icon"
-          onClick={handleAddToPlaylist}
-        >
-          <IcRoundPlaylistAdd />
-        </button>
+      <div className="card_img_wrapper" onClick={handleVideoSelection}>
+        <div className="card_btn_wrapper">
+          <button
+            title="add to watch later"
+            className={`sui_btn stf_card_btn float_top_right ${
+              isInLikedVideos && "in_watchlater_liked"
+            }`}
+            onClick={handleLikedVideos}
+          >
+            <AntDesignLikeOutlined />
+          </button>
+          <button
+            title="add to watch later"
+            className={`sui_btn stf_card_btn float_top_right ${
+              isInWatchLater && "in_watchlater_liked"
+            }`}
+            onClick={handleWatchLater}
+          >
+            <CarbonTime />
+          </button>
+          <button
+            title={`${playlistId ? "remove from playlist" : "add to playlist"}`}
+            className="sui_btn stf_card_btn stf_float_bottom_right"
+            onClick={handleAddToPlaylist}
+          >
+            {playlistId ? <IcRoundPlaylistRemove /> : <IcRoundPlaylistAdd />}
+          </button>
+        </div>
         <div className="card_video_length">{videoLength}</div>
         <img src={videoThumbnail} alt={title} />
       </div>

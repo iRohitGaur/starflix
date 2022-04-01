@@ -1,5 +1,6 @@
 import {
   useAuth,
+  useHistoryVideos,
   useLikedVideos,
   usePlaylist,
   useVideo,
@@ -122,8 +123,11 @@ function Video() {
     isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
   };
 
+  const { addVideoToHistory } = useHistoryVideos();
+
   const handleOnPlay = () => {
     setVideoPlayed(true);
+    addVideoToHistory(video);
   };
 
   return (

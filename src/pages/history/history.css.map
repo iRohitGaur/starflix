@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,SAAS;CACnB",
+    "mappings": "AAEA,AAAA,aAAa,CAAC;EACZ,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,SAAS;CACnB;;AACD,AAAA,uBAAuB,CAAC;ECsCtB,OAAO,EAAE,IAAI;EACb,GAAG,EDtCW,IAAI;ECuClB,cAAc,EDvCM,MAAM;CAW3B;;AAZD,AAGE,uBAHqB,CAGrB,CAAC,CAAC;EACA,SAAS,EAAE,MAAM;CAClB;;AALH,AAME,uBANqB,CAMrB,eAAe,CAAC;EACd,KAAK,EAAE,WAAW;CACnB;;AARH,AASE,uBATqB,CASrB,eAAe,CAAC;EC6BhB,OAAO,EAAE,IAAI;EACb,GAAG,ED7Ba,IAAI;CACnB",
     "sources": [
-        "history.scss"
+        "history.scss",
+        "../../styles/variables/variables.scss"
     ],
     "names": [],
     "file": "history.css"

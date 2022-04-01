@@ -2,6 +2,35 @@
   cursor: pointer;
 }
 
+.card_img_wrapper .stf_remove_from_history_btn {
+  top: 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3px;
+  background: var(--BTNBG);
+  border: none;
+  border-radius: 50%;
+}
+
+.card_img_wrapper .stf_remove_from_history_btn svg {
+  color: var(--VARIANT-1-DARK2);
+  height: 3rem;
+  width: 3rem;
+}
+
 .card_img_wrapper .card_btn_wrapper {
   position: absolute;
   bottom: 1rem;

@@ -1,4 +1,19 @@
+@import "../../styles/variables/variables.scss";
+
 .history_page {
   grid-area: main;
   padding: 1rem 20px;
+}
+.history_videos_wrapper {
+  @include flex(2rem, column);
+
+  p {
+    font-size: 1.8rem;
+  }
+  .remove_history {
+    width: fit-content;
+  }
+  .history_videos {
+    @include flex(1rem);
+  }
 }

@@ -2,4 +2,32 @@
   grid-area: main;
   padding: 1rem 20px;
 }
+
+.history_videos_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.history_videos_wrapper p {
+  font-size: 1.8rem;
+}
+
+.history_videos_wrapper .remove_history {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.history_videos_wrapper .history_videos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
 /*# sourceMappingURL=history.css.map */

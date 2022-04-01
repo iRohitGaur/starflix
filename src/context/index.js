@@ -16,3 +16,8 @@ export {
   LikedVideosProvider,
   useLikedVideos,
 } from "./liked-videos-context/liked-videos-context";
+
+export {
+  HistoryVideosProvider,
+  useHistoryVideos,
+} from "./history-video-context/history-video-context";

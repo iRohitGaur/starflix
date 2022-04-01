@@ -3,10 +3,17 @@ import {
   CarbonTime,
   IcRoundPlaylistAdd,
   IcRoundPlaylistRemove,
+  MdiTrashCanOutline,
 } from "assets/Icons";
-import { useAuth, useLikedVideos, usePlaylist, useWatchLater } from "context";
+import {
+  useAuth,
+  useHistoryVideos,
+  useLikedVideos,
+  usePlaylist,
+  useWatchLater,
+} from "context";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./card.css";
 
 function Card({ video, playlistId }) {
@@ -79,9 +86,30 @@ function Card({ video, playlistId }) {
     navigate(`/video/${video._id}`);
   };
 
+  const { historyVideos, removeVideoFromHistory } = useHistoryVideos();
+
+  const isInHistoryVideos =
+    historyVideos.findIndex((v) => v._id === video._id) !== -1;
+
+  const handleRemoveVideoFromHistory = (e) => {
+    e.stopPropagation();
+    removeVideoFromHistory(video._id);
+  };
+
+  const { pathname } = useLocation();
+
   return (
     <div className="sui_card">
       <div className="card_img_wrapper" onClick={handleVideoSelection}>
+        {isInHistoryVideos && pathname === "/history" && (
+          <button
+            title="remove from history"
+            className="sui_btn_float float_top_right stf_remove_from_history_btn"
+            onClick={handleRemoveVideoFromHistory}
+          >
+            <MdiTrashCanOutline />
+          </button>
+        )}
         <div className="card_btn_wrapper">
           <button
             title="add to watch later"
