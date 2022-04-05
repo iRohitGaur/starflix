@@ -14,7 +14,7 @@
 }
 
 .stf_landing_gif {
-  width: 110%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
