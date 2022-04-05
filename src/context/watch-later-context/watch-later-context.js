@@ -1,6 +1,6 @@
 import { useAuth } from "context/auth-context/auth-context";
 import { createContext, useContext, useState, useEffect } from "react";
-import { useAxios } from "utils";
+import { useAxios, useToast } from "utils";
 
 const WatchLaterContext = createContext();
 
@@ -10,6 +10,8 @@ function WatchLaterProvider({ children }) {
   const [watchLater, setWatchLater] = useState([]);
   const { user, token } = useAuth();
   const { response, operation } = useAxios();
+
+  const { sendToast } = useToast();
 
   useEffect(() => {
     if (user) {
@@ -21,6 +23,11 @@ function WatchLaterProvider({ children }) {
 
   useEffect(() => {
     if (response && response.watchLater) {
+      if (response.watchLater.length > watchLater.length) {
+        sendToast("Added to your Watch Later");
+      } else {
+        sendToast("Removed from your Watch Later", true);
+      }
       setWatchLater(response.watchLater);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

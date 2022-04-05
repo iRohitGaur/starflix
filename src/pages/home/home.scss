@@ -2,14 +2,19 @@
 
 .home_page {
   grid-area: main;
-  padding: 1rem 20px;
+  padding: 1rem 0 11rem 20px;
   @include flex(2rem, column);
   overflow-y: auto;
   overflow-x: hidden;
 }
+.stf_landing_gif {
+  width: 100%;
+  object-fit: cover;
+}
 .stf_section {
   @include flex(1rem, column, center);
   width: 100%;
+  padding-right: 20px;
 }
 .stf_category_wrapper {
   @include flex(2rem, null, center, space-around);
@@ -20,6 +25,7 @@
     position: relative;
     border-radius: 8px;
     overflow: hidden;
+    cursor: pointer;
   }
   p {
     position: absolute;

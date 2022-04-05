@@ -17,6 +17,7 @@ function CardHorizontal({ video, playlistId }) {
     videoThumbnail,
     likes,
     views,
+    date,
     channelName,
     channelThumbnail,
     channelLink,
@@ -117,7 +118,7 @@ function CardHorizontal({ video, playlistId }) {
         <div className="card_content_title_wrapper">
           <h2 className="card_video_title">{title}</h2>
           <div className="view_likes_wrapper">
-            <p>{views} views</p>•<p>{likes} likes</p>
+            <p>{date}</p>•<p>{views} views</p>•<p>{likes} likes</p>
           </div>
         </div>
         <p className="card_video_description">{description}</p>
