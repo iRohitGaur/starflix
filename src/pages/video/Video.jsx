@@ -14,6 +14,7 @@ import { Card, CardHorizontal } from "components";
 import {
   AntDesignLikeOutlined,
   IcOutlineRemoveRedEye,
+  IcRoundDateRange,
   IcSharpTimer,
 } from "assets/Icons";
 import { useWindowDimensions } from "utils";
@@ -27,6 +28,7 @@ function Video() {
     videoThumbnail: "",
     likes: "",
     views: "",
+    date: "",
     category: "",
     bird: "",
     featured: false,
@@ -59,6 +61,7 @@ function Video() {
     videoLength,
     likes,
     views,
+    date,
     channelName,
     channelThumbnail,
     channelLink,
@@ -113,21 +116,33 @@ function Video() {
 
   const handleWatchLater = (e) => {
     e.stopPropagation();
-    isInWatchLater
-      ? removeVideoFromWatchLater(video._id)
-      : addVideoToWatchLater(video);
+    if (user) {
+      isInWatchLater
+        ? removeVideoFromWatchLater(video._id)
+        : addVideoToWatchLater(video);
+    } else {
+      navigate("/auth");
+    }
   };
 
   const handleLikedVideos = (e) => {
     e.stopPropagation();
-    isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
+    if (user) {
+      isInLikedVideos
+        ? removeVideoFromLikes(video._id)
+        : addVideoToLikes(video);
+    } else {
+      navigate("/auth");
+    }
   };
 
   const { addVideoToHistory } = useHistoryVideos();
 
   const handleOnPlay = () => {
     setVideoPlayed(true);
-    addVideoToHistory(video);
+    if (user) {
+      addVideoToHistory(video);
+    }
   };
 
   return (
@@ -160,6 +175,9 @@ function Video() {
               </div>
               <div className="stf_page_video_cta">
                 <div className="stf_page_video_cta_details">
+                  <p>
+                    <IcRoundDateRange /> {date}
+                  </p>
                   <p>
                     <IcSharpTimer /> {videoLength} mins
                   </p>

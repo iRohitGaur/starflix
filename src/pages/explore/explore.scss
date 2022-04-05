@@ -5,9 +5,41 @@
   padding: 1rem 20px;
   overflow-y: auto;
   @include flex(2rem, column);
+  position: relative;
+
+  .explore_page_search_btn_wrapper {
+    @include flex(5px, null, center);
+    width: 95%;
+    position: relative;
+  }
+
+  .explore_search_input {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 1px solid gray;
+    background: $shade;
+    padding: 5px 1rem;
+    outline: none;
+  }
+
+  .explore_page_search_btn {
+    @include flex(null, null, center, center);
+    position: absolute;
+    text-decoration: none;
+    right: 5px;
+    top: 18px;
+    height: fit-content;
+    width: fit-content;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
 
   .filter_chip_wrapper {
-    @include flex(5px, null, center, null);
+    @include flex(5px, null, center);
     flex-wrap: wrap;
     padding-top: 2rem;
 

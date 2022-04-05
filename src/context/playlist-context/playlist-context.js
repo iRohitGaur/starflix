@@ -1,7 +1,7 @@
 import { useAuth } from "context/auth-context/auth-context";
 import { createContext, useContext } from "react";
 import { useState, useEffect } from "react";
-import { useAxios } from "../../utils";
+import { useAxios, useToast } from "../../utils";
 
 const PlaylistContext = createContext();
 
@@ -15,9 +15,16 @@ function PlaylistProvider({ children }) {
   const [videoToAddToPlaylist, setVideoToAddToPlaylist] = useState(null);
 
   const { token } = useAuth();
+  const { sendToast } = useToast();
 
   useEffect(() => {
     if (response && response.playlists) {
+      if (response.playlists.length > playlists.length) {
+        sendToast("Playlist created");
+      } else {
+        sendToast("Playlist deleted", true);
+      }
+
       if (videoToAddToPlaylist) {
         addVideoToPlaylist(
           response.playlists[response.playlists.length - 1]._id,
@@ -28,6 +35,13 @@ function PlaylistProvider({ children }) {
       setPlaylists(response.playlists);
     }
     if (response && response.playlist) {
+      const plist = playlists.find((p) => p._id === response.playlist._id);
+      if (response.playlist.videos.length > plist.videos.length) {
+        sendToast("Video added to your playlist");
+      } else {
+        sendToast("Video removed from your playlist", true);
+      }
+
       setPlaylists((playlist) =>
         playlist.map((p) =>
           p._id === response.playlist._id ? response.playlist : p

@@ -20,6 +20,7 @@ function Playlist() {
   }, [playlists]);
 
   const handleDeletePlaylist = () => {
+    setSelectedPlaylistIndex(null);
     deletePlaylist(playlists[selectedPlaylistIndex]._id);
   };
 
@@ -53,11 +54,17 @@ function Playlist() {
         {selectedPlaylistIndex !== null ? (
           playlists[selectedPlaylistIndex].videos.length === 0 ? (
             <div className="flex_column flex_align_center">
-              <div>Playlist empty</div>
+              <div className="playlist_empty">Playlist empty</div>
               <div>
                 Add videos to this playlist from{" "}
                 <Link to="/explore">Explore</Link> section
               </div>
+              <button
+                className="sui_btn delete_empty_playlist"
+                onClick={handleDeletePlaylist}
+              >
+                Delete Playlist
+              </button>
             </div>
           ) : (
             <div className="playlist_video_listing_wrapper">

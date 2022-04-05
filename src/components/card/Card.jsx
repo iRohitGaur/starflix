@@ -21,8 +21,8 @@ function Card({ video, playlistId }) {
     title,
     videoLength,
     videoThumbnail,
-    likes,
     views,
+    date,
     channelName,
     channelThumbnail,
     channelLink,
@@ -72,14 +72,24 @@ function Card({ video, playlistId }) {
 
   const handleWatchLater = (e) => {
     e.stopPropagation();
-    isInWatchLater
-      ? removeVideoFromWatchLater(video._id)
-      : addVideoToWatchLater(video);
+    if (user) {
+      isInWatchLater
+        ? removeVideoFromWatchLater(video._id)
+        : addVideoToWatchLater(video);
+    } else {
+      navigate("/auth");
+    }
   };
 
   const handleLikedVideos = (e) => {
     e.stopPropagation();
-    isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
+    if (user) {
+      isInLikedVideos
+        ? removeVideoFromLikes(video._id)
+        : addVideoToLikes(video);
+    } else {
+      navigate("/auth");
+    }
   };
 
   const handleVideoSelection = () => {
@@ -151,7 +161,7 @@ function Card({ video, playlistId }) {
         <div className="card_content_title_wrapper">
           <h2 className="card_video_title">{title}</h2>
           <div className="view_likes_wrapper">
-            <p>{views} views</p>•<p>{likes} likes</p>
+          <p>{date}</p>•<p>{views} views</p>
           </div>
           <Link to={channelLink}>{channelName}</Link>
         </div>
