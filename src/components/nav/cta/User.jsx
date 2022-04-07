@@ -1,9 +1,16 @@
 import React from "react";
 import { IcOutlineLogout, RiUser3Line } from "assets/Icons";
 import { useAuth } from "context";
+import { useNavigate } from "react-router-dom";
 
 function User() {
   const { user, setUserAndToken } = useAuth();
+
+  const navigate = useNavigate();
+
+  const handleNavigateToProfile = () => {
+    navigate("/profile");
+  };
 
   return (
     <div className="stf_user_area flex_column flex_align_end">
@@ -11,7 +18,10 @@ function User() {
         {user.firstName[0].toUpperCase()}
       </div>
       <div className="stf_user_hover_area">
-        <button className="sui_btn btn_txt stf_user_profile">
+        <button
+          className="sui_btn btn_txt stf_user_profile"
+          onClick={handleNavigateToProfile}
+        >
           <RiUser3Line />
           Profile
         </button>

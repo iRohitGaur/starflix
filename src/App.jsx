@@ -17,6 +17,7 @@ import {
   LikedVideos,
   Page404,
   Playlist,
+  Profile,
   Video,
   WatchLater,
 } from "pages";
@@ -38,6 +39,7 @@ function App() {
           <Route path="/likedvideos" element={<LikedVideos />} />
           <Route path="/watchlater" element={<WatchLater />} />
           <Route path="/history" element={<History />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
 
         <Route element={<RestrictedRoute />}>
