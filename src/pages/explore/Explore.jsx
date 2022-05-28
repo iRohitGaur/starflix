@@ -1,7 +1,7 @@
 import { IcRoundClose } from "assets/Icons";
 import { Card } from "components";
 import { useVideo } from "context";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./explore.css";
 import FilterChip from "./FilterChip";
 
@@ -19,6 +19,32 @@ const filterChipData = [
 function Explore() {
   const { filteredVideos } = useVideo();
   const [searchText, setSearchText] = useState("");
+  const [searchedTermFound, setSearchedTermFound] = useState(true);
+  const [searchedVideos, setSearchedVideos] = useState([]);
+
+  const timer = useRef();
+
+  useEffect(() => {
+    clearTimeout(timer.current);
+    setSearchedTermFound(true);
+
+    timer.current = setTimeout(() => {
+      if (searchText.trim() !== "") {
+        const result = filteredVideos.filter((v) =>
+          v.title.toLowerCase().includes(searchText.toLowerCase())
+        );
+        setSearchedVideos(result);
+        if (result.length === 0) {
+          setSearchedTermFound(false);
+        }
+      } else {
+        setSearchedVideos([]);
+      }
+    }, 400);
+
+    return () => clearTimeout(timer.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchText]);
 
   const handleSearch = (e) => {
     setSearchText(e.target.value);
@@ -26,15 +52,10 @@ function Explore() {
 
   const handleClearSearch = () => {
     setSearchText("");
+    setSearchedVideos([]);
   };
 
-  const isSearchActive = searchText !== "";
-
-  const searchedVideos = filteredVideos.filter((v) =>
-    v.title.toLowerCase().includes(searchText.toLowerCase())
-  );
-
-  const videosToShow = isSearchActive ? searchedVideos : filteredVideos;
+  const isSearchActive = searchText.trim() !== "";
 
   return (
     <main className="explore_page">
@@ -61,9 +82,15 @@ function Explore() {
         </div>
       </div>
       <div className="filter_videos_wrapper">
-        {videosToShow.map((video) => (
-          <Card key={video._id} video={video} />
-        ))}
+        {isSearchActive && !searchedTermFound
+          ? "No videos to show"
+          : searchedVideos.length > 0
+          ? searchedVideos.map((video) => (
+              <Card key={video._id} video={video} />
+            ))
+          : filteredVideos.map((video) => (
+              <Card key={video._id} video={video} />
+            ))}
       </div>
     </main>
   );
