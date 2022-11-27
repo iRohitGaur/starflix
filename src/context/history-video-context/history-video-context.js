@@ -8,7 +8,7 @@ const useHistoryVideos = () => useContext(HistoryVideosContext);
 
 function HistoryVideosProvider({ children }) {
   const [historyVideos, setHistoryVideos] = useState([]);
-  const { user, token } = useAuth();
+  const { user } = useAuth();
   const { response, operation } = useAxios();
 
   useEffect(() => {
@@ -26,38 +26,52 @@ function HistoryVideosProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [response]);
 
-  const addVideoToHistory = (video) => {
-    const findIndex = historyVideos.findIndex((v) => v._id === video._id);
-    if (findIndex === -1) {
-      operation({
+  const addVideoToHistory = async (videoId) => {
+    try {
+      const response = await operation({
         method: "post",
-        url: "/api/user/history",
-        headers: { authorization: token },
-        data: { video: video },
+        url: "/user/history",
+        data: { videoId },
       });
+      setHistoryVideos(response.history);
+    } catch (error) {
+      console.error(error);
     }
   };
 
-  const removeVideoFromHistory = (videoId) => {
-    const url = `/api/user/history/${videoId}`;
-    operation({
-      method: "delete",
-      url: url,
-      headers: { authorization: token },
-    });
+  const removeVideoFromHistory = async (videoId) => {
+    try {
+      const response = await operation({
+        method: "delete",
+        url: "/user/history",
+        data: { videoId },
+      });
+      setHistoryVideos(response.history);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const clearHistory = () => {
-    operation({
-      method: "delete",
-      url: "/api/user/history/all",
-      headers: { authorization: token },
-    });
-  }
+  const clearHistory = async () => {
+    try {
+      const response = await operation({
+        method: "delete",
+        url: "/user/history/all",
+      });
+      setHistoryVideos(response.history);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <HistoryVideosContext.Provider
-      value={{ historyVideos, addVideoToHistory, removeVideoFromHistory, clearHistory }}
+      value={{
+        historyVideos,
+        addVideoToHistory,
+        removeVideoFromHistory,
+        clearHistory,
+      }}
     >
       {children}
     </HistoryVideosContext.Provider>

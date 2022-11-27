@@ -12,7 +12,7 @@ function Profile() {
     <div className="profile_page">
       <div className="stf_user_details_wrapper">
         <div className="sui_avatar av_md av_txt sui_v1">
-          <h2>{user.firstName[0]}</h2>
+          <h2>{user.name[0]}</h2>
         </div>
         <div className="stf_user_name_email_wrapper">
           <span className="stf_user_detail">
@@ -21,7 +21,7 @@ function Profile() {
           </span>
           <span className="stf_user_detail">
             <p>Name:</p>
-            <p>{user.firstName}</p>
+            <p>{user.name}</p>
           </span>
         </div>
       </div>

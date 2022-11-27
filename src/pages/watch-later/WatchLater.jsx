@@ -18,7 +18,7 @@ function WatchLater() {
             </p>
           </div>
         ) : (
-          watchLater.map((video) => <Card key={video._id} video={video} />)
+          watchLater.map((videoId) => <Card key={videoId} videoId={videoId} />)
         )}
       </div>
     </main>

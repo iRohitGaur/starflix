@@ -8,86 +8,101 @@ const PlaylistContext = createContext();
 const usePlaylist = () => useContext(PlaylistContext);
 
 function PlaylistProvider({ children }) {
-  const { response, operation } = useAxios();
+  const { operation } = useAxios();
   const [playlists, setPlaylists] = useState([]);
   const [createNewPlaylistModal, setCreateNewPlaylistModal] = useState(false);
   const [showPlaylistsModal, setShowPlaylistsModal] = useState(false);
   const [videoToAddToPlaylist, setVideoToAddToPlaylist] = useState(null);
 
-  const { token } = useAuth();
   const { sendToast } = useToast();
+  const { token } = useAuth();
 
   useEffect(() => {
-    if (response && response.playlists) {
-      if (response.playlists.length > playlists.length) {
-        sendToast("Playlist created");
-      } else {
-        sendToast("Playlist deleted", true);
-      }
-
-      if (videoToAddToPlaylist) {
-        addVideoToPlaylist(
-          response.playlists[response.playlists.length - 1]._id,
-          videoToAddToPlaylist
-        );
-      }
-      setCreateNewPlaylistModal(false);
-      setPlaylists(response.playlists);
-    }
-    if (response && response.playlist) {
-      const plist = playlists.find((p) => p._id === response.playlist._id);
-      if (response.playlist.videos.length > plist.videos.length) {
-        sendToast("Video added to your playlist");
-      } else {
-        sendToast("Video removed from your playlist", true);
-      }
-
-      setPlaylists((playlist) =>
-        playlist.map((p) =>
-          p._id === response.playlist._id ? response.playlist : p
-        )
-      );
-      setShowPlaylistsModal(false);
-      setVideoToAddToPlaylist(null);
+    if (token) {
+      (async () => {
+        try {
+          const response = await operation({
+            method: "get",
+            url: "/user/playlist",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setPlaylists(response.playlist);
+        } catch (error) {
+          sendToast(error, true);
+          console.error(error);
+        }
+      })();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [response]);
+  }, [token]);
 
-  const createNewPlaylist = (playlist) => {
-    operation({
-      method: "post",
-      url: "/api/user/playlists",
-      headers: { authorization: token },
-      data: { playlist: playlist },
-    });
+  const createNewPlaylistAndAddVideo = async (playlistName) => {
+    try {
+      const response = await operation({
+        method: "post",
+        url: "/user/playlist/createandaddvideo",
+        data: { name: playlistName, videoId: videoToAddToPlaylist },
+      });
+      sendToast("playlist created");
+      sendToast("video added to playlist");
+      setPlaylists(response.playlist);
+      setVideoToAddToPlaylist(null);
+    } catch (error) {
+      sendToast(error, true);
+      console.error(error);
+    }
   };
 
-  const addVideoToPlaylist = (playlistId, video) => {
-    const url = `/api/user/playlists/${playlistId}`;
-    operation({
-      method: "post",
-      url: url,
-      headers: { authorization: token },
-      data: { video },
-    });
+  const createNewPlaylist = async (playlistName) => {
+    if (videoToAddToPlaylist) {
+      createNewPlaylistAndAddVideo(playlistName);
+    } else {
+      try {
+        const response = await operation({
+          method: "post",
+          url: "/user/playlist",
+          data: { name: playlistName },
+        });
+        sendToast("playlist created");
+        setPlaylists(response.playlist);
+      } catch (error) {
+        sendToast(error, true);
+        console.error(error);
+      }
+    }
   };
 
-  const removeVideoFromPlaylist = (playlistId, videoId) => {
-    const url = `/api/user/playlists/${playlistId}/${videoId}`;
-    operation({
-      method: "delete",
-      url: url,
-      headers: { authorization: token },
-    });
+  const toggleVideoInPlaylist = async (playlistId, videoId) => {
+    try {
+      const response = await operation({
+        method: "put",
+        url: "/user/playlist",
+        data: { playlistId, videoId },
+      });
+      sendToast("playlist updated");
+      setPlaylists(response.playlist);
+    } catch (error) {
+      sendToast(error, true);
+      console.error(error);
+    }
   };
 
-  const deletePlaylist = (playlistId) => {
-    const url = `/api/user/playlists/${playlistId}`;
-    operation({
-      method: "delete",
-      url: url,
-      headers: { authorization: token },
-    });
+  const deletePlaylist = async (playlistId) => {
+    const url = `/user/playlist/${playlistId}`;
+    try {
+      const response = await operation({
+        method: "delete",
+        url: url,
+      });
+      sendToast("playlist deleted");
+      setPlaylists(response.playlist);
+    } catch (error) {
+      sendToast(error, true);
+      console.error(error);
+    }
   };
 
   return (
@@ -99,10 +114,9 @@ function PlaylistProvider({ children }) {
         setCreateNewPlaylistModal,
         showPlaylistsModal,
         setShowPlaylistsModal,
-        addVideoToPlaylist,
+        toggleVideoInPlaylist,
         videoToAddToPlaylist,
         setVideoToAddToPlaylist,
-        removeVideoFromPlaylist,
         deletePlaylist,
       }}
     >

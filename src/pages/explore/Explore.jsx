@@ -86,10 +86,10 @@ function Explore() {
           ? "No videos to show"
           : searchedVideos.length > 0
           ? searchedVideos.map((video) => (
-              <Card key={video._id} video={video} />
+              <Card key={video._id} videoId={video._id} />
             ))
           : filteredVideos.map((video) => (
-              <Card key={video._id} video={video} />
+              <Card key={video._id} videoId={video._id} />
             ))}
       </div>
     </main>

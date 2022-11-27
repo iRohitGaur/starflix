@@ -15,8 +15,9 @@
 
 .stf_landing_gif {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  max-height: 50vh;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .stf_section {

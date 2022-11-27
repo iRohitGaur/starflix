@@ -4,12 +4,20 @@ import {
   IcRoundPlaylistAdd,
   IcRoundPlaylistRemove,
 } from "assets/Icons";
-import { useAuth, useLikedVideos, usePlaylist, useWatchLater } from "context";
+import {
+  useAuth,
+  useLikedVideos,
+  usePlaylist,
+  useVideo,
+  useWatchLater,
+} from "context";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./card.css";
 
-function CardHorizontal({ video, playlistId }) {
+function CardHorizontal({ videoId, playlistId }) {
+  const { videos } = useVideo();
+  const video = videos.filter((v) => v._id === videoId);
   const {
     title,
     description,
@@ -32,28 +40,25 @@ function CardHorizontal({ video, playlistId }) {
     setCreateNewPlaylistModal,
     setShowPlaylistsModal,
     setVideoToAddToPlaylist,
-    removeVideoFromPlaylist,
+    toggleVideoInPlaylist,
   } = usePlaylist();
 
-  const { watchLater, addVideoToWatchLater, removeVideoFromWatchLater } =
-    useWatchLater();
+  const { watchLater, toggleVideoInWatchLater } = useWatchLater();
 
-  const { likedVideos, addVideoToLikes, removeVideoFromLikes } =
-    useLikedVideos();
+  const { likedVideos, toggleVideoInLikes } = useLikedVideos();
 
-  const isInWatchLater =
-    watchLater.findIndex((v) => v._id === video._id) !== -1;
+  const isInWatchLater = watchLater.findIndex((vid) => vid === videoId) !== -1;
 
   const isInLikedVideos =
-    likedVideos.findIndex((v) => v._id === video._id) !== -1;
+    likedVideos.findIndex((vid) => vid === videoId) !== -1;
 
   const handleAddToPlaylist = (e) => {
     e.stopPropagation();
     if (user) {
       if (playlistId) {
-        removeVideoFromPlaylist(playlistId, video._id);
+        toggleVideoInPlaylist(playlistId, videoId);
       } else {
-        setVideoToAddToPlaylist(video);
+        setVideoToAddToPlaylist(videoId);
         if (playlists.length === 0) {
           setCreateNewPlaylistModal(true);
         } else {
@@ -67,18 +72,16 @@ function CardHorizontal({ video, playlistId }) {
 
   const handleWatchLater = (e) => {
     e.stopPropagation();
-    isInWatchLater
-      ? removeVideoFromWatchLater(video._id)
-      : addVideoToWatchLater(video);
+    toggleVideoInWatchLater(videoId);
   };
 
   const handleLikedVideos = (e) => {
     e.stopPropagation();
-    isInLikedVideos ? removeVideoFromLikes(video._id) : addVideoToLikes(video);
+    toggleVideoInLikes(videoId);
   };
 
   const handleVideoSelection = () => {
-    navigate(`/video/${video._id}`);
+    navigate(`/video/${videoId}`);
   };
 
   return (

@@ -9,7 +9,8 @@
 }
 .stf_landing_gif {
   width: 100%;
-  object-fit: cover;
+  max-height: 50vh;
+  object-fit: contain;
 }
 .stf_section {
   @include flex(1rem, column, center);

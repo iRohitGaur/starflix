@@ -1,18 +1,19 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MdiAccountCheckOutline } from "../../assets/Icons";
 import { Input, Loader } from "../../components";
-import { useAuth } from "../../context";
-import { useAxios } from "../../utils";
+import { useAxios, useToast } from "../../utils";
 
 function Signup({ moveUp, setMoveUp }) {
-  const { response, loading, operation } = useAxios();
-  const [signupData, setSignupData] = useState({
-    firstName: "",
+  const initialSignupData = {
+    name: "",
     email: "",
     password: "",
-  });
-  const { setUserAndToken } = useAuth();
+  };
+  const { loading, operation } = useAxios();
+  const [signupData, setSignupData] = useState(initialSignupData);
+
+  const { sendToast } = useToast();
 
   const isValidEmail = signupData.email.match(
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -22,22 +23,24 @@ function Signup({ moveUp, setMoveUp }) {
 
   const isValidPassword = signupData.password.length > 5;
 
-  const isValidName = signupData.firstName.length > 1;
+  const isValidName = signupData.name.length > 1;
 
-  const handleSignup = () => {
-    operation({
-      method: "post",
-      url: "/api/auth/signup",
-      data: signupData,
-    });
-  };
-
-  useEffect(() => {
-    if (response !== undefined && response.createdUser !== null) {
-      localStorage.setItem("starflix-user-token", response.encodedToken);
-      setUserAndToken(response.createdUser, response.encodedToken);
+  const handleSignup = async () => {
+    try {
+      const response = await operation({
+        method: "post",
+        url: "/signup",
+        data: signupData,
+      });
+      if (response) {
+        if (response.message) sendToast(response.message);
+        setSignupData(initialSignupData);
+        setMoveUp(false);
+      }
+    } catch (error) {
+      console.error(error);
     }
-  }, [response, setUserAndToken]);
+  };
 
   return (
     <div
@@ -54,9 +57,9 @@ function Signup({ moveUp, setMoveUp }) {
           status=""
           type="text"
           validation={isValidName}
-          value={signupData.firstName}
+          value={signupData.name}
           onChange={(e) =>
-            setSignupData((d) => ({ ...d, firstName: e.target.value }))
+            setSignupData((d) => ({ ...d, name: e.target.value }))
           }
         />
         <Input

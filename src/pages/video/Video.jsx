@@ -88,22 +88,20 @@ function Video() {
     setVideoToAddToPlaylist,
   } = usePlaylist();
 
-  const { watchLater, addVideoToWatchLater, removeVideoFromWatchLater } =
-    useWatchLater();
+  const { watchLater, toggleVideoInWatchLater } = useWatchLater();
 
-  const { likedVideos, addVideoToLikes, removeVideoFromLikes } =
-    useLikedVideos();
+  const { likedVideos, toggleVideoInLikes } = useLikedVideos();
 
   const isInWatchLater =
-    watchLater.findIndex((v) => v._id === video._id) !== -1;
+    watchLater.findIndex((vid) => vid === video._id) !== -1;
 
   const isInLikedVideos =
-    likedVideos.findIndex((v) => v._id === video._id) !== -1;
+    likedVideos.findIndex((vid) => vid === video._id) !== -1;
 
   const handleAddToPlaylist = (e) => {
     e.stopPropagation();
     if (user) {
-      setVideoToAddToPlaylist(video);
+      setVideoToAddToPlaylist(video._id);
       if (playlists.length === 0) {
         setCreateNewPlaylistModal(true);
       } else {
@@ -117,9 +115,7 @@ function Video() {
   const handleWatchLater = (e) => {
     e.stopPropagation();
     if (user) {
-      isInWatchLater
-        ? removeVideoFromWatchLater(video._id)
-        : addVideoToWatchLater(video);
+      toggleVideoInWatchLater(video._id);
     } else {
       navigate("/auth");
     }
@@ -128,9 +124,7 @@ function Video() {
   const handleLikedVideos = (e) => {
     e.stopPropagation();
     if (user) {
-      isInLikedVideos
-        ? removeVideoFromLikes(video._id)
-        : addVideoToLikes(video);
+      toggleVideoInLikes(video._id);
     } else {
       navigate("/auth");
     }
@@ -141,7 +135,7 @@ function Video() {
   const handleOnPlay = () => {
     setVideoPlayed(true);
     if (user) {
-      addVideoToHistory(video);
+      addVideoToHistory(video._id);
     }
   };
 
@@ -229,8 +223,10 @@ function Video() {
         Related Videos
         <div className="stf_related_videos">
           {windowWidth <= 1300 && windowWidth > 500
-            ? relatedVideos.map((v) => <CardHorizontal key={v._id} video={v} />)
-            : relatedVideos.map((v) => <Card key={v._id} video={v} />)}
+            ? relatedVideos.map((v) => (
+                <CardHorizontal key={v._id} videoId={v._id} />
+              ))
+            : relatedVideos.map((v) => <Card key={v._id} videoId={v._id} />)}
         </div>
       </div>
     </div>

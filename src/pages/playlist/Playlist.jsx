@@ -46,7 +46,7 @@ function Playlist() {
               }`}
               onClick={() => setSelectedPlaylistIndex(index)}
             >
-              {p.title}
+              {p.name}
             </button>
           ))}
       </div>
@@ -80,11 +80,11 @@ function Playlist() {
                 </button>
               </div>
               <div className="playlist_video_listing">
-                {playlists[selectedPlaylistIndex].videos.map((video) => (
+                {playlists[selectedPlaylistIndex].videos.map((videoId) => (
                   <Card
-                    key={video._id}
+                    key={videoId}
                     playlistId={playlists[selectedPlaylistIndex]._id}
-                    video={video}
+                    videoId={videoId}
                   />
                 ))}
               </div>

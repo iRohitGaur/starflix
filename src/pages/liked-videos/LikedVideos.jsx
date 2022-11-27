@@ -15,7 +15,7 @@ function LikedVideos() {
             <p>When you like a video it will be added to your Liked Videos.</p>
           </div>
         ) : (
-          likedVideos.map((video) => <Card key={video._id} video={video} />)
+          likedVideos.map((videoId) => <Card key={videoId} videoId={videoId} />)
         )}
       </div>
     </main>

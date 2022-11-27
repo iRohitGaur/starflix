@@ -23,8 +23,8 @@ function History() {
           </>
         )}
         <div className="history_videos">
-          {historyVideos.map((video) => (
-            <Card key={video._id} video={video} />
+          {historyVideos.map((videoId) => (
+            <Card key={videoId} videoId={videoId} />
           ))}
         </div>
       </div>

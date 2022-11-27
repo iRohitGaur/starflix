@@ -1,16 +1,18 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MdiAccountPlusOutline } from "assets/Icons";
 import { Input, Loader } from "components";
 import { useAuth } from "context";
-import { useAxios } from "utils";
+import { useAxios, useToast } from "utils";
+import { LOCAL_STORAGE_TOKEN } from "utils/constants";
 
-const guestLogin = { email: "guest@rohit.xyz", password: "Guest@123" };
+const guestLogin = { email: "guest@rohit.xyz", password: "guest@123" };
 
 function Login({ moveUp, setMoveUp }) {
-  const { response, loading, operation } = useAxios();
+  const { loading, operation } = useAxios();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const { setUserAndToken } = useAuth();
+  const { sendToast } = useToast();
 
   const isValidEmail = loginData.email.match(
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -20,20 +22,25 @@ function Login({ moveUp, setMoveUp }) {
 
   const isValidPassword = loginData.password.length > 5;
 
-  const handleLogin = () => {
-    operation({
-      method: "post",
-      url: "/api/auth/login",
-      data: loginData,
-    });
-  };
+  const handleLogin = async () => {
+    try {
+      const response = await operation({
+        method: "post",
+        url: "/login",
+        data: loginData,
+      });
+      const user = response.user;
+      const token = response.token;
 
-  useEffect(() => {
-    if (response !== undefined && response.foundUser !== null) {
-      localStorage.setItem("starflix-user-token", response.encodedToken);
-      setUserAndToken(response.foundUser, response.encodedToken);
+      if (user && token) {
+        localStorage.setItem(LOCAL_STORAGE_TOKEN, token);
+        setUserAndToken(user, token);
+        sendToast(response.message);
+      }
+    } catch (error) {
+      console.error(error);
     }
-  }, [response, setUserAndToken]);
+  };
 
   return (
     <div className={`login_wrapper flex_column ${moveUp ? "move_up" : ""}`}>

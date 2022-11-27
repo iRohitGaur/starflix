@@ -6,7 +6,7 @@ import "./add-video-to-playlist.css";
 function AddVideoToPlaylist() {
   const {
     playlists,
-    addVideoToPlaylist,
+    toggleVideoInPlaylist,
     showPlaylistsModal,
     setShowPlaylistsModal,
     setCreateNewPlaylistModal,
@@ -19,7 +19,8 @@ function AddVideoToPlaylist() {
   };
 
   const handleAddVideoToPlaylist = (playlistId) => {
-    addVideoToPlaylist(playlistId, videoToAddToPlaylist);
+    toggleVideoInPlaylist(playlistId, videoToAddToPlaylist);
+    setShowPlaylistsModal(false);
   };
 
   return (
@@ -50,7 +51,7 @@ function AddVideoToPlaylist() {
                   className="sui_btn add_btn_playlist"
                   onClick={() => handleAddVideoToPlaylist(p._id)}
                 >
-                  {p.title}
+                  {p.name}
                 </button>
               ))}
           </div>

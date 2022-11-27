@@ -7,7 +7,7 @@ const VideoContext = createContext();
 const useVideo = () => useContext(VideoContext);
 
 function VideoProvider({ children }) {
-  const { response, operation, loading } = useAxios();
+  const { operation, loading } = useAxios();
 
   const initialState = {
     videoData: [],
@@ -46,25 +46,28 @@ function VideoProvider({ children }) {
 
   const filteredVideos = filterData(videoState);
 
-  const featuredVideos = videoState.videoData.filter((p) => p.featured);
+  const videos = videoState.videoData;
+
+  const featuredVideos = videos.filter((p) => p.featured);
 
   useEffect(() => {
-    operation({
-      method: "get",
-      url: "/api/videos",
-    });
+    (async () => {
+      try {
+        const response = await operation({
+          method: "get",
+          url: "/videos",
+        });
+        videoDispatch({
+          type: "SETVALUE",
+          actionKey: "videoData",
+          actionValue: response,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (response) {
-      videoDispatch({
-        type: "SETVALUE",
-        actionKey: "videoData",
-        actionValue: response.videos,
-      });
-    }
-  }, [videoDispatch, response]);
 
   return (
     <VideoContext.Provider
@@ -74,6 +77,7 @@ function VideoProvider({ children }) {
         videoState,
         videoDispatch,
         loading,
+        videos,
       }}
     >
       {children}

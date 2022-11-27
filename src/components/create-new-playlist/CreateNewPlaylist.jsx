@@ -8,8 +8,7 @@ import React, { useState } from "react";
 import "./create-new-playlist.css";
 
 function CreateNewPlaylist({ show }) {
-  const initialState = { title: "", description: "" };
-  const [playlist, setPlaylist] = useState(initialState);
+  const [playlistName, setPlaylistName] = useState("");
 
   const {
     createNewPlaylist,
@@ -17,21 +16,15 @@ function CreateNewPlaylist({ show }) {
     setCreateNewPlaylistModal,
   } = usePlaylist();
 
-  const isTitleEmpty = playlist.title.length === 0;
-  const isValidTitle = playlist.title.length > 1;
-  const isDescriptionEmpty = playlist.description.length === 0;
-  const isValidDescription = playlist.description.length > 1;
+  const isTitleEmpty = playlistName.length === 0;
+  const isValidTitle = playlistName.length > 1;
 
-  const isButtonClickable =
-    isTitleEmpty || isDescriptionEmpty
-      ? false
-      : isValidTitle && isValidDescription
-      ? true
-      : false;
+  const isButtonClickable = !isTitleEmpty && isValidTitle ? true : false;
 
   const handleCreateNewPlaylist = () => {
-    setPlaylist(initialState);
-    createNewPlaylist(playlist);
+    setPlaylistName("");
+    createNewPlaylist(playlistName);
+    setCreateNewPlaylistModal(false);
   };
 
   return (
@@ -67,39 +60,8 @@ function CreateNewPlaylist({ show }) {
           </div>
           <input
             type="text"
-            value={playlist.title}
-            onChange={(e) =>
-              setPlaylist((p) => ({ ...p, title: e.target.value }))
-            }
-          />
-        </div>
-        <div
-          className={`sui_input input_req ${
-            isDescriptionEmpty
-              ? ""
-              : isValidDescription
-              ? "input_ss"
-              : "input_er"
-          }`}
-        >
-          <div className="input_desc">
-            <span className="input_lbl">Description</span>
-            <span className="input_info">
-              {isDescriptionEmpty ? (
-                ""
-              ) : isValidDescription ? (
-                <MdiTextBoxCheckOutline />
-              ) : (
-                <MdiTextBoxRemoveOutline />
-              )}
-            </span>
-          </div>
-          <input
-            type="text"
-            value={playlist.description}
-            onChange={(e) =>
-              setPlaylist((p) => ({ ...p, description: e.target.value }))
-            }
+            value={playlistName}
+            onChange={(e) => setPlaylistName(e.target.value)}
           />
         </div>
         <button

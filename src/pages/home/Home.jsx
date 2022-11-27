@@ -11,23 +11,24 @@ function Home() {
 
   const [categories, setCategories] = useState([]);
   const { featuredVideos } = useVideo();
-  const { response, operation } = useAxios();
+  const { operation } = useAxios();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    operation({
-      method: "get",
-      url: "/api/categories",
-    });
+    (async () => {
+      try {
+        const response = await operation({
+          method: "get",
+          url: "/categories",
+        });
+        setCategories(response);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (response) {
-      setCategories(response.categories);
-    }
-  }, [response]);
 
   const handleCategorySelection = (category) => {
     navigate(`/explore?category=${category}`);
@@ -55,7 +56,7 @@ function Home() {
         <h3>Featured Videos</h3>
         <div className="stf_video_wrapper">
           {featuredVideos.map((video) => (
-            <Card key={video._id} video={video} />
+            <Card key={video._id} videoId={video._id} />
           ))}
         </div>
       </div>
