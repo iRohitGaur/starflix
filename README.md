@@ -71,7 +71,3 @@ To view different pages of Starflix you can visit the following links:
   - Video Duration (under n mintues)
 - Responsive Site (Both desktop and mobile responsive)
 - Dark Mode
-
----
-
-#### Learning and Growing with [@neogcamp](https://twitter.com/neogcamp)
